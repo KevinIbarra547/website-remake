@@ -1,6 +1,6 @@
-# [Project name]
+# Grace Aligned
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+Grace Aligned is a scripture and gospel-content website. Development follows the phase gates and requirements in `specs/build-prompt.md`, `specs/constitution.md`, and `specs/spec.md`.
 
 ## Run & Operate
 

@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Grace Aligned"
+description = "A small public website for Grace Aligned, a scripture and gospel-content project sharing Bible verses, faith-focused visual content, and recommended resources."
+version = "1.0.0"
+id = "artifacts/grace-aligned"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24175
+
+[services.development]
+run = "pnpm --filter @workspace/grace-aligned run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/grace-aligned", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/grace-aligned/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24175"
+BASE_PATH = "/"
