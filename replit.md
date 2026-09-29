@@ -5,6 +5,7 @@ Grace Aligned is a scripture and gospel-content website. Development follows the
 ## Run & Operate
 
 - `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
+- `pnpm --filter @workspace/grace-aligned run dev` — run the public website
 - `pnpm run typecheck` — full typecheck across all packages
 - `pnpm run build` — typecheck + build all packages
 - `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from the OpenAPI spec
@@ -22,19 +23,23 @@ Grace Aligned is a scripture and gospel-content website. Development follows the
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- `specs/` — provided project constitution, website specification, and phased build prompt
+- `artifacts/grace-aligned/` — public website
+- `artifacts/api-server/` — shared Express API server
+- `lib/db/src/schema/` — PostgreSQL schema for leads and visits
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- Replit's web artifact uses the workspace's React/Vite scaffold for static site delivery; the existing Express service remains the API backend.
+- Apply development schema updates through Drizzle's dev-side push and Replit's post-merge setup; do not run schema DDL at server startup or in production build scripts.
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+The current phase is a technical foundation only. The public Home page displays the business name; later pages and features are gated by student approval.
 
 ## User preferences
 
-_Populate as you build — explicit user instructions worth remembering across sessions._
+- Stop after each phase and wait for the exact approval command in `specs/build-prompt.md`.
 
 ## Gotchas
 
