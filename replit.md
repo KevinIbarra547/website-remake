@@ -35,7 +35,7 @@ Grace Aligned is a scripture and gospel-content website. Development follows the
 
 ## Product
 
-The current phase is a technical foundation only. The public Home page displays the business name; later pages and features are gated by student approval.
+The current phase is Phase 2: public site content and structure from the approved `specs/spec.md`. Do not begin Phase 3 until the student approves Phase 2. Preserve unresolved product, social-link, and asset details; do not invent them.
 
 ## User preferences
 

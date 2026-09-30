@@ -2,7 +2,7 @@
 
 ## **Specification Status**
 
-DRAFT
+APPROVED
 
 This document defines the requirements for this student's business website.
 
@@ -66,7 +66,7 @@ AI-generated artwork overlays paired with Bible verses; imagery for recommended 
 
 ## **Other Branding Requirements**
 
-* Tagline: \[NEEDS DECISION: business tagline\]  
+* Tagline: "Find your peace in the Prince of Peace"  
 * Core Philosophy: "Live in truth ."  
 * Faith Values: Centered on loving Jesus, honoring the Trinity, and living in truth.
 
@@ -170,7 +170,7 @@ Combination (Social Media Content, Video Content, Affiliate Marketing).
 
 * Name: YouTube & Instagram Videos  
 * Type: Video Content  
-* Description: Short and long-form video content expanding on scripture, gospel messages, and featured Bible recommendations.  
+* Description: Planned videos will share scripture and explain the Gospel. Short and long-form video content expanding on scripture, gospel messages, and featured Bible recommendations.  
 * Pricing approach: Free to watch  
 * Image: Video thumbnail preview placeholder \[NEEDS ASSET: completed video content for Instagram and YouTube\]  
 * Important details: Planned expansion across YouTube (Grace Aligned) and Instagram; contains affiliate links in descriptions.  
@@ -330,15 +330,12 @@ Show by source:
 
 ## **Needs Decision**
 
-* "Find your peace in the Prince of Peace"  
-  * Must be resolved before: Phase 2: Public Site Content and Structure  
 * any thing I use in my videos  
   * Must be resolved before: Phase 2: Public Site Content and Structure
 
 ## **Needs Content**
 
-* Videos that simply and fully bring people to Christ  
-  * Must be resolved before: Phase 2: Public Site Content and Structure
+* None currently unresolved.
 
 ## **Needs Asset**
 
