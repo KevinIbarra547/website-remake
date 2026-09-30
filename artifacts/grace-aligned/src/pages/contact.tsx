@@ -8,7 +8,7 @@ export default function Contact() {
       <section className="page-intro" aria-labelledby="contact-heading">
         <div className="eyebrow">Start a conversation</div>
         <h1 className="display" id="contact-heading">
-          Reach out with what&apos;s on your heart.
+          Contact Grace Aligned
         </h1>
         <p>
           Have a question about our content, Bible recommendations, or faith
@@ -34,7 +34,7 @@ export default function Contact() {
             <label htmlFor="contact-message">Message</label>
             <textarea id="contact-message" name="message" required data-testid="input-contact-message" />
           </div>
-          <button type="submit" className="button" data-testid="button-send-message">
+          <button type="submit" className="button" disabled data-testid="button-send-message">
             Send Message
           </button>
           <p className="form-note" data-testid="text-contact-phase-note">
@@ -59,9 +59,6 @@ export default function Contact() {
             >
               Message on Instagram
             </a>
-            <Link href="/" className="button secondary" data-testid="link-contact-home">
-              Return Home
-            </Link>
           </div>
         </aside>
       </section>

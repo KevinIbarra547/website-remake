@@ -8,7 +8,7 @@ export default function Offerings() {
       <section className="page-intro" aria-labelledby="offerings-heading">
         <div className="eyebrow">What Grace Aligned offers</div>
         <h1 className="display" id="offerings-heading">
-          Scripture, story, and ways to go deeper.
+          Social Media Content, Videos &amp; Recommended Products
         </h1>
         <p>
           Explore Grace Aligned&apos;s social media content, video channels, and
@@ -22,13 +22,6 @@ export default function Offerings() {
           >
             Shop Recommended Bibles
           </a>
-          <Link
-            href="/contact.html"
-            className="button secondary"
-            data-testid="link-offerings-contact"
-          >
-            Ask a Question
-          </Link>
         </div>
       </section>
 
@@ -96,8 +89,8 @@ export default function Offerings() {
               available through affiliate links.
             </p>
             <span className="details">
-              Primary revenue stream. Specific non-Bible products or networks
-              are just whatever I use in my videos. [NEEDS DECISION]
+              Primary revenue stream. [NEEDS DECISION: Specific non-Bible
+              products and affiliate networks to feature.]
             </span>
             <div className="hero-actions">
               <span className="button secondary pending" data-testid="status-offering-products">

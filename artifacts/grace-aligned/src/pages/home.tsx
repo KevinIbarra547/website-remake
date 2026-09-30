@@ -78,7 +78,7 @@ export default function Home() {
         <div className="section-heading">
           <div className="eyebrow">Stay connected</div>
           <h2 className="display" id="home-channels-heading">
-            Follow the work as it grows.
+            Instagram and YouTube
           </h2>
           <p>
             Instagram is active for scripture graphics, short videos, and

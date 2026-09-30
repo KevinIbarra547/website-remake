@@ -58,10 +58,13 @@ function SiteFooter() {
       <div className="footer-inner">
         <div>
           <div className="footer-brand" data-testid="text-footer-brand">
-            Grace Aligned
+            © Grace Aligned
           </div>
           <p className="footer-copy" data-testid="text-footer-philosophy">
             Live in truth
+          </p>
+          <p className="footer-copy" data-testid="text-footer-tagline">
+            Find your peace in the Prince of Peace
           </p>
           <p className="disclosure" data-testid="text-affiliate-disclosure">
             Affiliate disclosure: Grace Aligned may earn income through Bible and

@@ -7,7 +7,7 @@ export default function About() {
       <section className="page-intro" aria-labelledby="about-heading">
         <div className="eyebrow">The story behind the work</div>
         <h1 className="display" id="about-heading">
-          A life brought out of darkness.
+          About Grace Aligned
         </h1>
         <p>
           Grace Aligned was founded out of a transformative experience when
