@@ -1,4 +1,3 @@
-import { Link } from 'wouter';
 import { ArtworkFrame } from '@/components/artwork-frame';
 
 const instagramUrl = 'https://www.instagram.com/grace_aligned/';

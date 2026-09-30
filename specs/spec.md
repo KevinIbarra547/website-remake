@@ -180,10 +180,10 @@ Combination (Social Media Content, Video Content, Affiliate Marketing).
 
 * Name: Affiliate Product Links  
 * Type: Affiliate Marketing  
-* Description: Recommended Bibles and products featured in posts and videos, available through affiliate links.  
-* Pricing approach: Product purchase via affiliate link (prices set by vendor)  
+* Description: Recommended Bibles and products featured in posts and videos, linked through vendor pages; affiliate tracking is to be confirmed.  
+* Pricing approach: Product purchase through vendor links (prices set by vendor); affiliate tracking pending.  
 * Image: Product image placeholders  
-* Important details: Primary revenue stream. Specific non-Bible products or networks are just whatever I use in my videos.  
+* Important details: Primary revenue stream. Amazon King James Bible search: https://www.amazon.com/king-james-bible/s?k=king+james+bible. Bible bookmarks: https://www.christianartgifts.com/bible-accessories/bookmarks. Affiliate tracking is not confirmed for these URLs. Specific non-Bible products or networks are just whatever I use in my videos.  
 * CTA: Shop Recommended Products
 
 ## **Offering Priority**
@@ -330,12 +330,13 @@ Show by source:
 
 ## **Needs Decision**
 
-* any thing I use in my videos  
+* Specific products for videos and affiliate tracking details for the supplied vendor links
   * Must be resolved before: Phase 2: Public Site Content and Structure
 
 ## **Needs Content**
 
-* None currently unresolved.
+* Verified YouTube channel URL.
+* Approved Bible verse and reference for the generated artwork overlay; no verse text has been added.
 
 ## **Needs Asset**
 
