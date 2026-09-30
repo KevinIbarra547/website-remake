@@ -1,6 +1,11 @@
 import { Link } from 'wouter';
+import { ArtworkFrame } from '@/components/artwork-frame';
 
 const instagramUrl = 'https://www.instagram.com/grace_aligned/';
+const amazonBiblesUrl =
+  'https://www.amazon.com/king-james-bible/s?k=king+james+bible';
+const bookmarkAccessoriesUrl =
+  'https://www.christianartgifts.com/bible-accessories/bookmarks';
 
 export default function Offerings() {
   return (
@@ -16,9 +21,12 @@ export default function Offerings() {
         </p>
         <div className="hero-actions">
           <a
-            href="#recommended-bibles"
+            href={amazonBiblesUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="button"
             data-testid="link-offerings-shop-bibles"
+            aria-label="Shop recommended King James Bibles on Amazon; opens in a new tab"
           >
             Shop Recommended Bibles
           </a>
@@ -26,7 +34,10 @@ export default function Offerings() {
       </section>
 
       <section className="offering-list" aria-label="Grace Aligned offerings">
-        <article className="offering" data-testid="card-offering-instagram">
+        <article
+          className="offering offering-with-art"
+          data-testid="card-offering-instagram"
+        >
           <div className="offering-number">01</div>
           <div>
             <h2>Instagram Verse Posts</h2>
@@ -51,6 +62,11 @@ export default function Offerings() {
               </a>
             </div>
           </div>
+          <ArtworkFrame
+            className="artwork-frame--offering"
+            caption="Artwork sample; verse overlay not included."
+            testId="frame-offering-artwork"
+          />
           <div className="offering-meta">Social Media Content<br />Free to view</div>
         </article>
 
@@ -86,20 +102,37 @@ export default function Offerings() {
             <h2>Affiliate Product Links</h2>
             <p>
               Recommended Bibles and products featured in posts and videos,
-              available through affiliate links.
+            with vendor links provided below.
             </p>
             <span className="details">
-              Primary revenue stream. [NEEDS DECISION: Specific non-Bible
-              products and affiliate networks to feature.]
+            Primary revenue stream through affiliate marketing. Affiliate
+            tracking is not confirmed for the supplied vendor URLs.
             </span>
             <div className="hero-actions">
-              <span className="button secondary pending" data-testid="status-offering-products">
-                Shop Recommended Products [NEEDS DECISION: product links]
-              </span>
+            <a
+              href={amazonBiblesUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="button secondary"
+              data-testid="link-offering-bibles-amazon"
+              aria-label="Shop King James Bibles on Amazon; opens in a new tab"
+            >
+              Shop Recommended Bibles
+            </a>
+            <a
+              href={bookmarkAccessoriesUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="button secondary"
+              data-testid="link-offering-bookmarks"
+              aria-label="Browse Bible bookmarks at Christian Art Gifts; opens in a new tab"
+            >
+              Bible Bookmarks
+            </a>
             </div>
           </div>
           <div className="offering-meta">
-            Affiliate Marketing<br />Product purchase via affiliate link (prices set by vendor)
+          Vendor links<br />Prices set by vendor
           </div>
         </article>
       </section>

@@ -67,9 +67,9 @@ function SiteFooter() {
             Find your peace in the Prince of Peace
           </p>
           <p className="disclosure" data-testid="text-affiliate-disclosure">
-            Affiliate disclosure: Grace Aligned may earn income through Bible and
-            product recommendations. Purchasing through featured links supports
-            the ministry at no extra cost to you.
+            Affiliate disclosure: Grace Aligned may earn a commission when you
+            purchase through affiliate links, at no extra cost to you. Not every
+            vendor link is affiliate-tracked.
           </p>
         </div>
 

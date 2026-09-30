@@ -1,5 +1,5 @@
 import { Link } from 'wouter';
-import logoPath from '@assets/0_Screenshot_2026-09-28_1.17.45_PM_1790729723658.png';
+import { ArtworkFrame } from '@/components/artwork-frame';
 
 const instagramUrl = 'https://www.instagram.com/grace_aligned/';
 
@@ -36,17 +36,11 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="seal-panel" data-testid="panel-home-logo">
-          <img
-            src={logoPath}
-            alt="Grace Aligned black and gold circular metallic emblem"
-            className="seal-image"
-            data-testid="img-home-logo"
-          />
-          <p className="seal-caption">
-            Find your peace in the Prince of Peace
-          </p>
-        </div>
+        <ArtworkFrame
+          className="artwork-frame--hero"
+          caption="Find your peace in the Prince of Peace"
+          testId="frame-home-artwork"
+        />
       </section>
 
       <div className="gold-rule" />
