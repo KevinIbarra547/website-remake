@@ -85,9 +85,139 @@
 
 @layer components {
   .site-shell {
+    position: relative;
+    isolation: isolate;
     min-height: 100dvh;
     display: flex;
     flex-direction: column;
+    padding-top: 3.75rem;
+    padding-bottom: 3.75rem;
+  }
+
+  .site-ornament {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    pointer-events: none;
+    color: hsl(var(--primary) / 0.74);
+  }
+
+  .site-header,
+  .site-main,
+  .site-footer {
+    position: relative;
+    z-index: 1;
+  }
+
+  .site-ornament__outer-line,
+  .site-ornament__inner-line {
+    position: absolute;
+    border: 1px solid hsl(var(--primary) / 0.42);
+  }
+
+  .site-ornament__outer-line {
+    inset: 0.55rem;
+  }
+
+  .site-ornament__inner-line {
+    inset: 0.8rem;
+    border-color: hsl(var(--primary) / 0.17);
+  }
+
+  .site-ornament__corner {
+    position: absolute;
+    width: clamp(2.5rem, 4.5vw, 3.75rem);
+    height: auto;
+    stroke-width: 1.25;
+  }
+
+  .site-ornament__corner--top-left {
+    top: 0.55rem;
+    left: 0.55rem;
+  }
+
+  .site-ornament__corner--top-right {
+    top: 0.55rem;
+    right: 0.55rem;
+    transform: scaleX(-1);
+  }
+
+  .site-ornament__corner--bottom-left {
+    bottom: 0.55rem;
+    left: 0.55rem;
+    transform: scaleY(-1);
+  }
+
+  .site-ornament__corner--bottom-right {
+    right: 0.55rem;
+    bottom: 0.55rem;
+    transform: scale(-1);
+  }
+
+  .site-ornament__vignette {
+    position: absolute;
+    top: 0.35rem;
+    left: 50%;
+    display: grid;
+    width: 5.4rem;
+    height: 3.15rem;
+    place-items: center;
+    transform: translateX(-50%);
+    border: 1px solid hsl(var(--primary) / 0.56);
+    border-radius: 50% 50% 0.42rem 0.42rem / 48% 48% 0.42rem 0.42rem;
+    background: hsl(var(--background));
+    box-shadow: 0 0 0 0.25rem hsl(var(--background) / 0.92);
+  }
+
+  .site-ornament__scene {
+    width: 88%;
+    height: 82%;
+    overflow: visible;
+    stroke-width: 1.35;
+  }
+
+  @media (max-width: 760px) {
+    .site-shell {
+      padding-top: 3.65rem;
+    }
+
+    .site-ornament__outer-line {
+      inset: 0.35rem;
+    }
+
+    .site-ornament__inner-line {
+      inset: 0.58rem;
+    }
+
+    .site-ornament__corner {
+      width: 2.6rem;
+    }
+
+    .site-ornament__corner--top-left {
+      top: 0.35rem;
+      left: 0.35rem;
+    }
+
+    .site-ornament__corner--top-right {
+      top: 0.35rem;
+      right: 0.35rem;
+    }
+
+    .site-ornament__corner--bottom-left {
+      bottom: 0.35rem;
+      left: 0.35rem;
+    }
+
+    .site-ornament__corner--bottom-right {
+      right: 0.35rem;
+      bottom: 0.35rem;
+    }
+
+    .site-ornament__vignette {
+      top: 0.22rem;
+      width: 4.9rem;
+      height: 2.9rem;
+    }
   }
 
   .site-main {

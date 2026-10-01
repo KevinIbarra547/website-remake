@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'wouter';
 import logoPath from '@assets/0_Screenshot_2026-09-28_1.17.45_PM_1790729723658.png';
+import { SiteOrnament } from '@/components/site-ornament';
 
 const instagramUrl = 'https://www.instagram.com/grace_aligned/';
 
@@ -13,6 +14,7 @@ const navigation = [
 export function SiteShell({ children }: { children: React.ReactNode }) {
   return (
     <div className="site-shell">
+      <SiteOrnament />
       <SiteHeader />
       <main className="site-main">{children}</main>
       <SiteFooter />
