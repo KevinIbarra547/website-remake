@@ -144,6 +144,65 @@
     transform: translateX(-50%) scaleY(-1);
   }
 
+  .site-ornament__pilaster {
+    position: absolute;
+    top: 8.5rem;
+    bottom: 8.5rem;
+    display: flex;
+    width: 2.5rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    opacity: 0.68;
+  }
+
+  .site-ornament__pilaster::before,
+  .site-ornament__pilaster::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: hsl(var(--primary) / 0.25);
+    content: '';
+  }
+
+  .site-ornament__pilaster::before {
+    left: 0.28rem;
+  }
+
+  .site-ornament__pilaster::after {
+    right: 0.28rem;
+  }
+
+  .site-ornament__pilaster--left {
+    left: 1.5rem;
+  }
+
+  .site-ornament__pilaster--right {
+    right: 1.5rem;
+  }
+
+  .site-ornament__lancet {
+    position: relative;
+    z-index: 1;
+    width: 2rem;
+    height: 5rem;
+    flex: 0 0 auto;
+    stroke-width: 0.95;
+  }
+
+  .site-ornament__gothic-canopy {
+    position: absolute;
+    top: -0.65rem;
+    left: 50%;
+    width: clamp(15rem, 18vw, 17rem);
+    height: 8.7rem;
+    overflow: visible;
+    stroke-width: 1;
+    opacity: 0.66;
+    transform: translateX(-50%);
+  }
+
   .site-ornament__corner {
     position: absolute;
     width: clamp(3.6rem, 5.8vw, 5.1rem);
@@ -299,6 +358,13 @@
       padding-bottom: 4.6rem;
     }
 
+    .site-ornament__gothic-canopy {
+      top: -0.38rem;
+      width: 10.2rem;
+      height: 6rem;
+      stroke-width: 0.9;
+    }
+
     .site-ornament__outer-line {
       inset: 0.38rem;
     }
@@ -357,6 +423,12 @@
 
     .site-ornament__scene {
       stroke-width: 1.15;
+    }
+  }
+
+  @media (max-width: 1279px) {
+    .site-ornament__pilaster {
+      display: none;
     }
   }
 

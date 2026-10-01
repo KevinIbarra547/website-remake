@@ -24,9 +24,12 @@ export function SiteOrnament() {
       <div className="site-ornament__inner-line" />
       <FrameRail edge="top" />
       <FrameRail edge="bottom" />
+      <FramePilaster side="left" />
+      <FramePilaster side="right" />
       {cornerPositions.map((position) => (
         <CornerOrnament key={position} position={position} />
       ))}
+      <GothicCanopy />
       <div className="site-ornament__vignette" data-scene={sceneForRoute(location)}>
         <span className="site-ornament__vignette-inner">
           <BibleScene route={location} />
@@ -47,6 +50,47 @@ function sceneForRoute(route: string) {
     default:
       return 'nativity';
   }
+}
+
+function FramePilaster({ side }: { side: 'left' | 'right' }) {
+  return (
+    <div className={`site-ornament__pilaster site-ornament__pilaster--${side}`}>
+      {[0, 1, 2].map((window) => (
+        <svg
+          key={window}
+          className="site-ornament__lancet"
+          viewBox="0 0 48 100"
+          fill="none"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M5 96V52C5 30 18 17 24 5C30 17 43 30 43 52V96M10 92V53C10 35 20 25 24 16C28 25 38 35 38 53V92" />
+          <circle cx="24" cy="51" r="10" />
+          <circle cx="24" cy="51" r="3" />
+          <path d="M24 39V63M12 51H36M15.5 42.5L32.5 59.5M32.5 42.5L15.5 59.5M24 61V83M15 68C17 76 20 80 24 83C28 80 31 76 33 68M5 88H43" />
+        </svg>
+      ))}
+    </div>
+  );
+}
+
+function GothicCanopy() {
+  return (
+    <svg
+      className="site-ornament__gothic-canopy"
+      viewBox="0 0 280 160"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M8 158V99C8 61 54 35 140 5C226 35 272 61 272 99V158" />
+      <path d="M22 158V101C22 69 65 45 140 18C215 45 258 69 258 101V158" />
+      <path d="M8 142H22M258 142H272M18 112H29M251 112H262" />
+    </svg>
+  );
 }
 
 function CornerOrnament({ position }: { position: CornerPosition }) {
