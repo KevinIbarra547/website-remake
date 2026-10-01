@@ -1,5 +1,4 @@
-import bannerPath from '@assets/image_1790812858324.png';
-import animatedBannerPath from '@assets/generated_videos/grace-aligned-panel-highlights.gif';
+import bannerPath from '@assets/image_1790885784515.png';
 import logoPath from '@assets/0_Screenshot_2026-09-28_1.17.45_PM_1790729723658.png';
 
 export function HomeBrandBanner() {
@@ -11,10 +10,9 @@ export function HomeBrandBanner() {
       data-testid="home-brand-banner"
     >
       <picture className="home-brand-banner__picture">
-        <source media="(prefers-reduced-motion: reduce)" srcSet={bannerPath} />
         <img
           className="home-brand-banner__art"
-          src={animatedBannerPath}
+          src={bannerPath}
           alt=""
           aria-hidden="true"
         />

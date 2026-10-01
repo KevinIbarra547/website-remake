@@ -533,7 +533,7 @@
   .home-brand-banner {
     position: relative;
     width: 100%;
-    aspect-ratio: 2 / 1;
+    aspect-ratio: 1024 / 559;
     overflow: hidden;
     background: hsl(var(--background));
   }
