@@ -68,6 +68,8 @@ function GothicOuterArch() {
       <path d="M12 190V112C12 67 183 31 600 5C1017 31 1188 67 1188 112V190" />
       <path d="M28 190V116C28 76 203 47 600 22C997 47 1172 76 1172 116V190" />
       <path d="M12 168H28M1172 168H1188M32 123H48M1152 123H1168M55 190V159M1145 190V159" />
+      <path className="site-ornament__arch-glint" pathLength={100} d="M12 190V112C12 67 183 31 600 5C1017 31 1188 67 1188 112V190" />
+      <path className="site-ornament__arch-glint" pathLength={100} d="M28 190V116C28 76 203 47 600 22C997 47 1172 76 1172 116V190" />
     </svg>
   );
 }
@@ -110,6 +112,8 @@ function GothicCanopy() {
       <path d="M12 188V112C12 68 67 36 160 5C253 36 308 68 308 112V188" />
       <path d="M27 188V114C27 75 77 47 160 20C243 47 293 75 293 114V188" />
       <path d="M12 166H27M293 166H308M21 124H36M284 124H299M40 188V161M280 188V161" />
+      <path className="site-ornament__canopy-glint" pathLength={100} d="M12 188V112C12 68 67 36 160 5C253 36 308 68 308 112V188" />
+      <path className="site-ornament__canopy-glint" pathLength={100} d="M27 188V114C27 75 77 47 160 20C243 47 293 75 293 114V188" />
     </svg>
   );
 }

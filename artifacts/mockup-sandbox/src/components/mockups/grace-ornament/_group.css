@@ -170,6 +170,47 @@
   transform: translateX(-50%);
 }
 
+.story-arch-glint,
+.story-canopy-glint {
+  fill: none;
+  stroke: hsl(var(--primary) / 0.92);
+  stroke-width: 2.2;
+  stroke-dasharray: 6 94;
+  stroke-dashoffset: 100;
+  opacity: 0;
+  animation: story-arch-shimmer 28s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes story-arch-shimmer {
+  0% {
+    stroke-dashoffset: 100;
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.82;
+  }
+
+  90% {
+    stroke-dashoffset: 0;
+    opacity: 0.82;
+  }
+
+  100% {
+    stroke-dashoffset: -8;
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .story-arch-glint,
+  .story-canopy-glint {
+    animation: none;
+    opacity: 0;
+  }
+}
+
 .story-corner {
   position: absolute;
   width: 4.6rem;

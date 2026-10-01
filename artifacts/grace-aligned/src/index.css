@@ -136,6 +136,47 @@
     transform: translateX(-50%);
   }
 
+  .site-ornament__arch-glint,
+  .site-ornament__canopy-glint {
+    fill: none;
+    stroke: hsl(var(--primary) / 0.92);
+    stroke-width: 2.2;
+    stroke-dasharray: 6 94;
+    stroke-dashoffset: 100;
+    opacity: 0;
+    animation: arch-shimmer-travel 28s linear infinite;
+    pointer-events: none;
+  }
+
+  @keyframes arch-shimmer-travel {
+    0% {
+      stroke-dashoffset: 100;
+      opacity: 0;
+    }
+
+    10% {
+      opacity: 0.82;
+    }
+
+    90% {
+      stroke-dashoffset: 0;
+      opacity: 0.82;
+    }
+
+    100% {
+      stroke-dashoffset: -8;
+      opacity: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .site-ornament__arch-glint,
+    .site-ornament__canopy-glint {
+      animation: none;
+      opacity: 0;
+    }
+  }
+
   .site-ornament__rail {
     position: absolute;
     left: 50%;

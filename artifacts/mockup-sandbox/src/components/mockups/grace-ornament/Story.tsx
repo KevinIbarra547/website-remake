@@ -18,6 +18,8 @@ export function Story() {
           <path d="M12 190V112C12 67 183 31 600 5C1017 31 1188 67 1188 112V190" />
           <path d="M28 190V116C28 76 203 47 600 22C997 47 1172 76 1172 116V190" />
           <path d="M12 168H28M1172 168H1188M32 123H48M1152 123H1168M55 190V159M1145 190V159" />
+          <path className="story-arch-glint" pathLength={100} d="M12 190V112C12 67 183 31 600 5C1017 31 1188 67 1188 112V190" />
+          <path className="story-arch-glint" pathLength={100} d="M28 190V116C28 76 203 47 600 22C997 47 1172 76 1172 116V190" />
         </svg>
         <svg className="story-rail" viewBox="0 0 1000 72" fill="none" stroke="currentColor">
           <path d="M8 36H190C214 36 229 29 244 13C255 2 270 6 270 18C270 28 258 31 251 24M190 36C214 36 229 43 244 59C255 70 270 66 270 54C270 44 258 41 251 48M270 36H337M992 36H810C786 36 771 29 756 13C745 2 730 6 730 18C730 28 742 31 749 24M810 36C786 36 771 43 756 59C745 70 730 66 730 54C730 44 742 41 749 48M730 36H663" />
@@ -64,6 +66,8 @@ export function Story() {
           <path d="M12 188V112C12 68 67 36 160 5C253 36 308 68 308 112V188" />
           <path d="M27 188V114C27 75 77 47 160 20C243 47 293 75 293 114V188" />
           <path d="M12 166H27M293 166H308M21 124H36M284 124H299M40 188V161M280 188V161" />
+          <path className="story-canopy-glint" pathLength={100} d="M12 188V112C12 68 67 36 160 5C253 36 308 68 308 112V188" />
+          <path className="story-canopy-glint" pathLength={100} d="M27 188V114C27 75 77 47 160 20C243 47 293 75 293 114V188" />
         </svg>
         <ChurchFinial />
         <div className="story-vignette">
