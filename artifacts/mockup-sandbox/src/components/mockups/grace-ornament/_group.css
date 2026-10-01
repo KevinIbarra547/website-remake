@@ -249,7 +249,7 @@
   position: absolute;
   top: 10.5rem;
   bottom: 8rem;
-  width: clamp(3.5rem, calc((100vw - 84rem) / 2 - 0.5rem), 8rem);
+  width: clamp(2.25rem, calc((100vw - 88rem) / 2 - 0.25rem), 5rem);
   opacity: 0.92;
   pointer-events: none;
 }
