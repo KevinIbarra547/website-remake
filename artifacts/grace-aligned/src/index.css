@@ -201,7 +201,7 @@
     position: absolute;
     top: 10.5rem;
     bottom: 8rem;
-    width: clamp(6rem, calc((100vw - 72rem) / 2 - 1rem), 16rem);
+    width: clamp(4.5rem, calc((100vw - 78rem) / 2 - 0.75rem), 12rem);
     opacity: 0.92;
     pointer-events: none;
   }
