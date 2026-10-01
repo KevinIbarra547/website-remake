@@ -1,2 +1,2 @@
 - [Grace Aligned phase gate](grace-aligned-phase-gate.md) — keep Phase 3 paused until the user enters the exact approval command.
-- [Grace Aligned church frame](grace-aligned-church-frame.md) — preserve the gold-only Catholic/Gothic frame without obscuring each page's Bible scene.
+- [Grace Aligned church frame](grace-aligned-church-frame.md) — keep the gold-only Gothic frame, vine sides, and clear route-specific Bible scenes.

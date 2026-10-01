@@ -25,8 +25,8 @@ export function SiteOrnament() {
       <GothicOuterArch />
       <FrameRail edge="top" />
       <FrameRail edge="bottom" />
-      <FramePilaster side="left" />
-      <FramePilaster side="right" />
+      <SideVine side="left" />
+      <SideVine side="right" />
       {cornerPositions.map((position) => (
         <CornerOrnament key={position} position={position} />
       ))}
@@ -74,26 +74,23 @@ function GothicOuterArch() {
   );
 }
 
-function FramePilaster({ side }: { side: 'left' | 'right' }) {
+function SideVine({ side }: { side: 'left' | 'right' }) {
   return (
-    <div className={`site-ornament__pilaster site-ornament__pilaster--${side}`}>
-      {[0, 1, 2].map((window) => (
-        <svg
-          key={window}
-          className="site-ornament__lancet"
-            viewBox="0 0 64 144"
-          fill="none"
-          stroke="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-            <path d="M5 140V78C5 46 21 30 32 5C43 30 59 46 59 78V140M12 136V79C12 52 24 37 32 18C40 37 52 52 52 79V136" />
-            <path d="M5 77H15M49 77H59M8 72H18M46 72H56M5 128H59M9 134H55M15 79V125M21 80V120M43 80V120M49 79V125" />
-            <circle cx="32" cy="61" r="12" />
-            <circle cx="32" cy="61" r="3.2" />
-            <path d="M32 47V75M18 61H46M22 51L42 71M42 51L22 71M32 73V108M21 80C24 89 28 94 32 98C36 94 40 89 43 80" />
-        </svg>
-      ))}
+    <div className={`site-ornament__vine site-ornament__vine--${side}`}>
+      <svg
+        className="site-ornament__vine-art"
+        viewBox="0 0 100 720"
+        preserveAspectRatio="none"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M50 713C64 677 36 646 50 607C65 568 36 539 51 501C66 462 35 431 51 393C66 354 35 324 50 286C65 247 35 217 51 177C66 138 39 105 51 70C56 52 52 30 49 12" />
+        <path d="M50 615C34 601 24 583 21 561M50 615C67 601 77 584 80 562M50 518C33 502 22 484 19 462M50 518C67 502 77 484 80 462M51 421C35 406 25 387 22 366M51 421C67 405 77 387 79 366M50 324C34 309 24 290 22 269M50 324C66 308 76 290 79 269M50 226C35 211 26 193 25 172M50 226C65 210 75 192 77 172M51 126C38 112 32 96 33 78M51 126C64 111 70 95 69 77" />
+        <path d="M20 569C29 565 36 558 36 548C27 548 20 555 20 565M80 569C71 565 64 558 64 548C73 548 80 555 80 565M18 470C27 466 34 459 34 449C25 449 18 456 18 466M80 470C71 466 64 459 64 449C73 449 80 456 80 466M21 374C30 370 37 363 37 353C28 353 21 360 21 370M79 374C70 370 63 363 63 353C72 353 79 360 79 370M21 277C30 273 37 266 37 256C28 256 21 263 21 273M79 277C70 273 63 266 63 256C72 256 79 263 79 273M24 180C33 176 40 169 40 159C31 159 24 166 24 176M77 180C68 176 61 169 61 159C70 159 77 166 77 176M32 85C40 81 45 74 45 65C37 65 31 71 31 80M69 85C61 81 56 74 56 65C64 65 70 71 70 80" />
+        <path d="M23 562L31 554M77 562L69 554M21 463L29 455M77 463L69 455M24 367L32 359M76 367L68 359M24 270L32 262M76 270L68 262M27 173L35 165M74 173L66 165M35 80L41 71M66 80L59 71" />
+      </svg>
     </div>
   );
 }
