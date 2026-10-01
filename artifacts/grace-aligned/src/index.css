@@ -194,7 +194,7 @@
     position: absolute;
     top: 70%;
     left: 50%;
-    width: clamp(4.25rem, 8vw, 7.25rem);
+    width: min(26%, 15rem);
     aspect-ratio: 1;
     transform: translate(-50%, -50%);
     border: 1px solid hsl(var(--primary));
