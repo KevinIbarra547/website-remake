@@ -6,6 +6,19 @@ export function Story() {
       <div className="story-frame" aria-hidden="true">
         <div className="story-line story-line--outer" />
         <div className="story-line story-line--inner" />
+        <svg
+          className="story-outer-arch"
+          viewBox="0 0 1200 200"
+          fill="none"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M12 190V112C12 67 183 31 600 5C1017 31 1188 67 1188 112V190" />
+          <path d="M28 190V116C28 76 203 47 600 22C997 47 1172 76 1172 116V190" />
+          <path d="M12 168H28M1172 168H1188M32 123H48M1152 123H1168M55 190V159M1145 190V159" />
+        </svg>
         <svg className="story-rail" viewBox="0 0 1000 72" fill="none" stroke="currentColor">
           <path d="M8 36H190C214 36 229 29 244 13C255 2 270 6 270 18C270 28 258 31 251 24M190 36C214 36 229 43 244 59C255 70 270 66 270 54C270 44 258 41 251 48M270 36H337M992 36H810C786 36 771 29 756 13C745 2 730 6 730 18C730 28 742 31 749 24M810 36C786 36 771 43 756 59C745 70 730 66 730 54C730 44 742 41 749 48M730 36H663" />
           <path d="M86 36C98 20 110 20 122 36C110 52 98 52 86 36ZM878 36C890 20 902 20 914 36C902 52 890 52 878 36ZM316 36C326 26 336 26 346 36C336 46 326 46 316 36ZM654 36C664 26 674 26 684 36C674 46 664 46 654 36Z" />

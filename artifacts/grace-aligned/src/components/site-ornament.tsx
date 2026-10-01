@@ -22,6 +22,7 @@ export function SiteOrnament() {
     >
       <div className="site-ornament__outer-line" />
       <div className="site-ornament__inner-line" />
+      <GothicOuterArch />
       <FrameRail edge="top" />
       <FrameRail edge="bottom" />
       <FramePilaster side="left" />
@@ -51,6 +52,24 @@ function sceneForRoute(route: string) {
     default:
       return 'nativity';
   }
+}
+
+function GothicOuterArch() {
+  return (
+    <svg
+      className="site-ornament__outer-arch"
+      viewBox="0 0 1200 200"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M12 190V112C12 67 183 31 600 5C1017 31 1188 67 1188 112V190" />
+      <path d="M28 190V116C28 76 203 47 600 22C997 47 1172 76 1172 116V190" />
+      <path d="M12 168H28M1172 168H1188M32 123H48M1152 123H1168M55 190V159M1145 190V159" />
+    </svg>
+  );
 }
 
 function FramePilaster({ side }: { side: 'left' | 'right' }) {

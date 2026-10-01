@@ -158,6 +158,18 @@
   border-color: hsl(var(--primary) / 0.24);
 }
 
+.story-outer-arch {
+  position: absolute;
+  top: -0.3rem;
+  left: 50%;
+  width: min(92%, 78rem);
+  height: 7.2rem;
+  overflow: visible;
+  stroke-width: 1.05;
+  opacity: 0.48;
+  transform: translateX(-50%);
+}
+
 .story-corner {
   position: absolute;
   width: 4.6rem;
@@ -313,6 +325,14 @@
 }
 
 @media (max-width: 760px) {
+  .story-outer-arch {
+    top: 0;
+    width: 92%;
+    height: 5.2rem;
+    stroke-width: 0.78;
+    opacity: 0.42;
+  }
+
   .story-canopy {
     top: -0.38rem;
     width: 10.7rem;

@@ -124,6 +124,18 @@
     border-color: hsl(var(--primary) / 0.24);
   }
 
+  .site-ornament__outer-arch {
+    position: absolute;
+    top: -0.3rem;
+    left: 50%;
+    width: min(92%, 78rem);
+    height: 7.2rem;
+    overflow: visible;
+    stroke-width: 1.05;
+    opacity: 0.48;
+    transform: translateX(-50%);
+  }
+
   .site-ornament__rail {
     position: absolute;
     left: 50%;
@@ -367,6 +379,14 @@
     .site-shell {
       padding-top: 6.05rem;
       padding-bottom: 4.6rem;
+    }
+
+    .site-ornament__outer-arch {
+      top: 0;
+      width: 92%;
+      height: 5.2rem;
+      stroke-width: 0.78;
+      opacity: 0.42;
     }
 
     .site-ornament__gothic-canopy {
