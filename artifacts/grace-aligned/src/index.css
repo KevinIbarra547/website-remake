@@ -87,6 +87,7 @@
   .site-shell {
     position: relative;
     isolation: isolate;
+    --site-vine-width: clamp(2.25rem, calc((100vw - 88rem) / 2 - 0.25rem), 5rem);
     min-height: 100dvh;
     display: flex;
     flex-direction: column;
@@ -201,7 +202,7 @@
     position: absolute;
     top: 10.5rem;
     bottom: 8rem;
-    width: clamp(2.25rem, calc((100vw - 88rem) / 2 - 0.25rem), 5rem);
+    width: var(--site-vine-width);
     opacity: 0.92;
     pointer-events: none;
   }
@@ -433,7 +434,7 @@
   }
 
   .site-main {
-    width: min(100% - 2rem, 72rem);
+    width: min(100% - 2rem, 96rem);
     margin: 0 auto;
     flex: 1;
   }
@@ -1079,6 +1080,155 @@
 
     .footer-links {
       justify-content: flex-start;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .site-main {
+      width: min(
+        96rem,
+        calc(100% - var(--site-vine-width) - var(--site-vine-width) - 3rem)
+      );
+    }
+
+    .home-brand-banner__logo-wrap {
+      width: min(26%, 20rem);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.6rem, 5.2vw, 4.8rem);
+    }
+
+    .hero-copy {
+      max-width: 48rem;
+      font-size: 1.12rem;
+    }
+
+    .button {
+      min-height: 3rem;
+      padding: 0.8rem 1.15rem;
+      font-size: 0.82rem;
+    }
+
+    .artwork-frame--hero {
+      width: min(100%, 34rem);
+    }
+
+    .artwork-caption {
+      font-size: 1.08rem;
+    }
+
+    .section-heading {
+      max-width: 48rem;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2rem, 3.2vw, 3.4rem);
+    }
+
+    .section-heading p,
+    .body-copy {
+      font-size: 1.1rem;
+    }
+
+    .statement {
+      font-size: clamp(2rem, 3vw, 3.2rem);
+    }
+
+    .page-intro {
+      max-width: 68rem;
+    }
+
+    .page-intro h1 {
+      font-size: clamp(2.6rem, 4.2vw, 4.6rem);
+    }
+
+    .page-intro p {
+      max-width: 48rem;
+      font-size: 1.12rem;
+    }
+
+    .offering {
+      gap: 1.7rem;
+      padding: 2rem 0;
+    }
+
+    .offering-with-art {
+      grid-template-columns: 4.5rem minmax(0, 1fr) 14rem 12rem;
+    }
+
+    .offering h2 {
+      font-size: 2.35rem;
+    }
+
+    .offering p {
+      font-size: 1.08rem;
+    }
+
+    .offering-number {
+      font-size: 0.9rem;
+    }
+
+    .offering-meta {
+      min-width: 12rem;
+      font-size: 0.74rem;
+    }
+
+    .details {
+      font-size: 0.88rem;
+    }
+
+    .about-layout,
+    .contact-layout {
+      grid-template-columns: minmax(0, 1.2fr) minmax(22rem, 0.8fr);
+      gap: 6rem;
+    }
+
+    .prose-block h2 {
+      font-size: 0.78rem;
+    }
+
+    .prose-block p {
+      font-size: 1.12rem;
+    }
+
+    .side-note {
+      padding: 2rem;
+    }
+
+    .side-note p {
+      font-size: 2.1rem;
+    }
+
+    .side-note small {
+      font-size: 1rem;
+    }
+
+    .seal-image {
+      width: min(72%, 20rem);
+    }
+
+    .contact-form {
+      gap: 1.25rem;
+      padding: 2rem;
+    }
+
+    .field label {
+      font-size: 0.78rem;
+    }
+
+    .field input,
+    .field textarea {
+      padding: 0.95rem;
+      font-size: 1.03rem;
+    }
+
+    .field textarea {
+      min-height: 12rem;
+    }
+
+    .form-note {
+      font-size: 0.84rem;
     }
   }
 }
