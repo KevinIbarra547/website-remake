@@ -30,6 +30,7 @@ export function SiteOrnament() {
         <CornerOrnament key={position} position={position} />
       ))}
       <GothicCanopy />
+      <ChurchFinial />
       <div className="site-ornament__vignette" data-scene={sceneForRoute(location)}>
         <span className="site-ornament__vignette-inner">
           <BibleScene route={location} />
@@ -59,16 +60,17 @@ function FramePilaster({ side }: { side: 'left' | 'right' }) {
         <svg
           key={window}
           className="site-ornament__lancet"
-          viewBox="0 0 48 100"
+            viewBox="0 0 64 144"
           fill="none"
           stroke="currentColor"
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-          <path d="M5 96V52C5 30 18 17 24 5C30 17 43 30 43 52V96M10 92V53C10 35 20 25 24 16C28 25 38 35 38 53V92" />
-          <circle cx="24" cy="51" r="10" />
-          <circle cx="24" cy="51" r="3" />
-          <path d="M24 39V63M12 51H36M15.5 42.5L32.5 59.5M32.5 42.5L15.5 59.5M24 61V83M15 68C17 76 20 80 24 83C28 80 31 76 33 68M5 88H43" />
+            <path d="M5 140V78C5 46 21 30 32 5C43 30 59 46 59 78V140M12 136V79C12 52 24 37 32 18C40 37 52 52 52 79V136" />
+            <path d="M5 77H15M49 77H59M8 72H18M46 72H56M5 128H59M9 134H55M15 79V125M21 80V120M43 80V120M49 79V125" />
+            <circle cx="32" cy="61" r="12" />
+            <circle cx="32" cy="61" r="3.2" />
+            <path d="M32 47V75M18 61H46M22 51L42 71M42 51L22 71M32 73V108M21 80C24 89 28 94 32 98C36 94 40 89 43 80" />
         </svg>
       ))}
     </div>
@@ -79,16 +81,34 @@ function GothicCanopy() {
   return (
     <svg
       className="site-ornament__gothic-canopy"
-      viewBox="0 0 280 160"
+      viewBox="0 0 320 190"
       fill="none"
       stroke="currentColor"
       strokeLinecap="round"
       strokeLinejoin="round"
       aria-hidden="true"
     >
-      <path d="M8 158V99C8 61 54 35 140 5C226 35 272 61 272 99V158" />
-      <path d="M22 158V101C22 69 65 45 140 18C215 45 258 69 258 101V158" />
-      <path d="M8 142H22M258 142H272M18 112H29M251 112H262" />
+      <path d="M12 188V112C12 68 67 36 160 5C253 36 308 68 308 112V188" />
+      <path d="M27 188V114C27 75 77 47 160 20C243 47 293 75 293 114V188" />
+      <path d="M12 166H27M293 166H308M21 124H36M284 124H299M40 188V161M280 188V161" />
+    </svg>
+  );
+}
+
+function ChurchFinial() {
+  return (
+    <svg
+      className="site-ornament__finial"
+      viewBox="0 0 48 64"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M24 4V60M10 19H38M18 12H30V19M18 26H30M14 19V25M34 19V25" />
+      <circle cx="24" cy="19" r="3.2" />
+      <path d="M19 57L24 62L29 57" />
     </svg>
   );
 }
