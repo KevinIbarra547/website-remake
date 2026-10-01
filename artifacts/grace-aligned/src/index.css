@@ -244,18 +244,16 @@
     opacity: 0;
     pointer-events: none;
     transform: rotate(20deg);
-    animation: home-brand-logo-sheen 8s ease-in-out infinite;
+    animation: home-brand-logo-sheen 8s linear infinite;
   }
 
   @keyframes home-brand-logo-sheen {
-    0%,
-    78%,
-    100% {
+    0% {
       opacity: 0;
       left: -42%;
     }
 
-    81% {
+    4% {
       opacity: 0.85;
     }
 
@@ -264,7 +262,7 @@
       opacity: 0.72;
     }
 
-    96% {
+    100% {
       left: 110%;
       opacity: 0;
     }
@@ -272,14 +270,14 @@
 
   @keyframes home-brand-logo-glow {
     0%,
-    78%,
     100% {
       box-shadow:
         0 0 0 0.4rem hsl(var(--background) / 0.88),
         0 0 1.5rem hsl(var(--primary) / 0.55);
     }
 
-    86% {
+    40%,
+    60% {
       box-shadow:
         0 0 0 0.4rem hsl(var(--background) / 0.88),
         0 0 2.8rem hsl(var(--primary) / 0.88),
