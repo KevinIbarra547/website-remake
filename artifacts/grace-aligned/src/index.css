@@ -302,77 +302,11 @@
     stroke-width: 1.25;
   }
 
-  .scene-star {
-    transform-box: fill-box;
-    transform-origin: center;
-    animation: scene-star-glow 3.8s ease-in-out infinite;
-  }
-
-  .scene-flame {
-    transform-box: fill-box;
-    transform-origin: center bottom;
-    animation: scene-flame-flicker 1.8s ease-in-out infinite alternate;
-  }
-
-  .scene-water {
-    transform-box: fill-box;
-    transform-origin: center;
-    animation: scene-water-ripple 3.2s ease-in-out infinite;
-  }
-
+  .scene-star,
+  .scene-flame,
+  .scene-water,
   .scene-fish {
-    transform-box: fill-box;
-    transform-origin: center;
-    animation: scene-fish-glide 5.5s ease-in-out infinite;
-  }
-
-  @keyframes scene-star-glow {
-    0%,
-    100% {
-      opacity: 0.62;
-      transform: scale(0.96);
-    }
-
-    50% {
-      opacity: 1;
-      transform: scale(1.08);
-    }
-  }
-
-  @keyframes scene-flame-flicker {
-    from {
-      opacity: 0.68;
-      transform: scaleY(0.96) rotate(-1deg);
-    }
-
-    to {
-      opacity: 1;
-      transform: scaleY(1.06) rotate(1deg);
-    }
-  }
-
-  @keyframes scene-water-ripple {
-    0%,
-    100% {
-      opacity: 0.52;
-      transform: scaleX(0.96);
-    }
-
-    50% {
-      opacity: 0.88;
-      transform: scaleX(1.03);
-    }
-  }
-
-  @keyframes scene-fish-glide {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-
-    50% {
-      transform: translateY(-1.5px);
-    }
+    animation: none;
   }
 
   @media (max-width: 760px) {
@@ -467,15 +401,6 @@
   @media (max-width: 1279px) {
     .site-ornament__pilaster {
       display: none;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .scene-star,
-    .scene-flame,
-    .scene-water,
-    .scene-fish {
-      animation: none;
     }
   }
 
