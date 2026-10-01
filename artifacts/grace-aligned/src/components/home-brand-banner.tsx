@@ -2,19 +2,13 @@ import bannerPath from '@assets/image_1790812858324.png';
 import animatedBannerPath from '@assets/generated_videos/grace-aligned-panel-highlights.gif';
 import logoPath from '@assets/0_Screenshot_2026-09-28_1.17.45_PM_1790729723658.png';
 
-type HomeBrandBannerProps = {
-  testId?: string;
-};
-
-export function HomeBrandBanner({
-  testId = 'home-brand-banner',
-}: HomeBrandBannerProps) {
+export function HomeBrandBanner() {
   return (
     <div
       className="home-brand-banner"
       role="img"
       aria-label="An ornate gold arch of biblical scenes surrounding the Grace Aligned emblem."
-      data-testid={testId}
+      data-testid="home-brand-banner"
     >
       <picture className="home-brand-banner__picture">
         <source media="(prefers-reduced-motion: reduce)" srcSet={bannerPath} />
@@ -28,7 +22,7 @@ export function HomeBrandBanner({
       <div
         className="home-brand-banner__logo-wrap"
         aria-hidden="true"
-        data-testid={`${testId}-logo`}
+        data-testid="home-brand-banner-logo"
       >
         <div className="home-brand-banner__logo-window">
           <img className="home-brand-banner__logo" src={logoPath} alt="" />

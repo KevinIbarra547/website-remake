@@ -1,6 +1,5 @@
 import { Link } from 'wouter';
 import logoPath from '@assets/0_Screenshot_2026-09-28_1.17.45_PM_1790729723658.png';
-import { ScriptureStoryBanner } from '@/components/scripture-story-banner';
 
 export default function About() {
   return (
@@ -10,11 +9,6 @@ export default function About() {
         <h1 className="display" id="about-heading">
           About Grace Aligned
         </h1>
-        <ScriptureStoryBanner
-          title="Saul Meets Jesus on the Road to Damascus"
-          reference="Acts 9:1–22"
-          summary="An encounter with Jesus changed Saul’s path, and he began proclaiming the Gospel."
-        />
         <p>
           Grace Aligned was founded out of a transformative experience when
           Jesus saved the owner from the darkness of the world, inspiring a

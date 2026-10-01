@@ -453,63 +453,6 @@
     line-height: 1.8;
   }
 
-  .scripture-story-banner {
-    margin: 0 0 1.2rem;
-    overflow: hidden;
-    border: 1px solid hsl(var(--primary) / 0.45);
-    background: hsl(var(--card));
-    box-shadow: 0 0.7rem 1.8rem hsl(0 0% 0% / 0.18);
-  }
-
-  .scripture-story-banner__caption {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    align-items: center;
-    gap: 1.2rem;
-    padding: 0.85rem 1rem 0.95rem;
-    border-top: 1px solid hsl(var(--primary) / 0.45);
-    background:
-      linear-gradient(110deg, hsl(var(--card)), hsl(220 16% 8%));
-  }
-
-  .scripture-story-banner__content {
-    display: grid;
-    min-width: 0;
-    gap: 0.2rem;
-  }
-
-  .scripture-story-banner__eyebrow {
-    color: hsl(var(--primary));
-    font-family: var(--app-font-mono);
-    font-size: 0.62rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-  }
-
-  .scripture-story-banner__title {
-    color: hsl(var(--foreground));
-    font-family: var(--app-font-serif);
-    font-size: clamp(1.1rem, 1.6vw, 1.35rem);
-    line-height: 1.2;
-  }
-
-  .scripture-story-banner__summary {
-    margin: 0.12rem 0 0;
-    color: hsl(var(--muted-foreground));
-    font-size: 0.82rem;
-    line-height: 1.55;
-  }
-
-  .scripture-story-banner__reference {
-    align-self: center;
-    color: hsl(var(--primary));
-    font-family: var(--app-font-mono);
-    font-size: 0.68rem;
-    letter-spacing: 0.05em;
-    text-align: right;
-    white-space: nowrap;
-  }
-
   .offering-list {
     display: grid;
     gap: 1rem;
@@ -794,18 +737,6 @@
 
     .footer-links {
       justify-content: flex-start;
-    }
-  }
-
-  @media (max-width: 520px) {
-    .scripture-story-banner__caption {
-      grid-template-columns: minmax(0, 1fr);
-      gap: 0.55rem;
-    }
-
-    .scripture-story-banner__reference {
-      text-align: left;
-      white-space: normal;
     }
   }
 }
