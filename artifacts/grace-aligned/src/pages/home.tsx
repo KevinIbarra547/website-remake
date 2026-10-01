@@ -1,11 +1,13 @@
 import { Link } from 'wouter';
 import { ArtworkFrame } from '@/components/artwork-frame';
+import { HomeBrandBanner } from '@/components/home-brand-banner';
 
 const instagramUrl = 'https://www.instagram.com/grace_aligned/';
 
 export default function Home() {
   return (
     <>
+      <HomeBrandBanner />
       <section className="hero" aria-labelledby="home-heading">
         <div>
           <div className="eyebrow">Grace Aligned / Gospel truth</div>
