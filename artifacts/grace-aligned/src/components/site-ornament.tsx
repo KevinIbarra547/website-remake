@@ -1,4 +1,5 @@
 import { useLocation } from 'wouter';
+import { BibleScene } from '@/components/site-ornament-scenes';
 
 type CornerPosition = 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
 
@@ -21,11 +22,15 @@ export function SiteOrnament() {
     >
       <div className="site-ornament__outer-line" />
       <div className="site-ornament__inner-line" />
+      <FrameRail edge="top" />
+      <FrameRail edge="bottom" />
       {cornerPositions.map((position) => (
         <CornerOrnament key={position} position={position} />
       ))}
-      <div className="site-ornament__vignette">
-        <BibleScene route={location} />
+      <div className="site-ornament__vignette" data-scene={sceneForRoute(location)}>
+        <span className="site-ornament__vignette-inner">
+          <BibleScene route={location} />
+        </span>
       </div>
     </div>
   );
@@ -54,89 +59,32 @@ function CornerOrnament({ position }: { position: CornerPosition }) {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <path d="M4 60C5 43 12 31 27 27C17 26 12 18 13 6M4 60C22 59 34 51 37 36C40 47 48 51 60 47M27 27C39 24 46 16 44 5M37 36C47 33 55 25 59 14" />
-      <path d="M13 45C18 39 23 37 29 39M31 50C36 54 43 55 50 52M19 17C22 21 26 23 31 23" />
-      <circle cx="27" cy="27" r="1.5" />
-      <circle cx="37" cy="36" r="1.5" />
+      <path d="M3 61C5 45 10 34 22 28C32 23 38 16 38 5M3 61C20 59 32 53 37 42C42 31 48 25 61 24M22 28C14 27 10 21 11 11M37 42C39 53 47 58 60 56M38 5C48 7 53 13 52 22M61 24C59 14 62 8 61 4" />
+      <path d="M8 49C14 41 20 38 28 40M24 57C31 53 34 47 34 39M15 16C20 21 26 23 32 22M47 51C47 43 51 37 58 34M47 12C43 18 39 22 33 25M52 57C52 51 55 47 61 44" />
+      <path d="M16 34C19 30 24 30 27 34C24 38 19 38 16 34ZM39 31C42 27 47 27 50 31C47 35 42 35 39 31Z" />
+      <circle cx="22" cy="34" r="1.3" />
+      <circle cx="45" cy="31" r="1.3" />
+      <circle cx="37" cy="42" r="1.6" />
     </svg>
   );
 }
 
-function BibleScene({ route }: { route: string }) {
+function FrameRail({ edge }: { edge: 'top' | 'bottom' }) {
   return (
     <svg
-      className="site-ornament__scene"
-      viewBox="0 0 96 64"
+      className={`site-ornament__rail site-ornament__rail--${edge}`}
+      viewBox="0 0 1000 72"
       fill="none"
       stroke="currentColor"
       strokeLinecap="round"
       strokeLinejoin="round"
-      aria-hidden="true"
     >
-      {route === '/offerings.html' ? (
-        <LoavesAndFishScene />
-      ) : route === '/about.html' ? (
-        <BurningBushScene />
-      ) : route === '/contact.html' ? (
-        <SamaritanWellScene />
-      ) : (
-        <NativityScene />
-      )}
+      <path d="M8 36H190C214 36 229 29 244 13C255 2 270 6 270 18C270 28 258 31 251 24M190 36C214 36 229 43 244 59C255 70 270 66 270 54C270 44 258 41 251 48M270 36H337M992 36H810C786 36 771 29 756 13C745 2 730 6 730 18C730 28 742 31 749 24M810 36C786 36 771 43 756 59C745 70 730 66 730 54C730 44 742 41 749 48M730 36H663" />
+      <path d="M86 36C98 20 110 20 122 36C110 52 98 52 86 36ZM878 36C890 20 902 20 914 36C902 52 890 52 878 36ZM316 36C326 26 336 26 346 36C336 46 326 46 316 36ZM654 36C664 26 674 26 684 36C674 46 664 46 654 36Z" />
+      <circle cx="42" cy="36" r="3" />
+      <circle cx="958" cy="36" r="3" />
+      <circle cx="365" cy="36" r="2" />
+      <circle cx="635" cy="36" r="2" />
     </svg>
-  );
-}
-
-function NativityScene() {
-  return (
-    <>
-      <path d="M13 52V27L48 7L83 27V52M13 27H25M71 27H83" />
-      <path d="M48 2V7M39 7L36 3M57 7L60 3M34 2L38 8M62 2L58 8" />
-      <circle cx="32" cy="29" r="4" />
-      <path d="M26 35C25 40 24 45 22 51H39C39 43 37 37 32 34M28 27C29 23 35 23 37 27" />
-      <circle cx="64" cy="29" r="4" />
-      <path d="M58 35C54 40 55 46 54 51H73C71 44 70 37 64 34M60 27C61 23 67 23 69 27M62 33L64 36" />
-      <circle cx="48" cy="41" r="3.5" />
-      <path d="M40 45H56L53 52H43L40 45ZM39 45L48 40L57 45M19 52H77" />
-    </>
-  );
-}
-
-function LoavesAndFishScene() {
-  return (
-    <>
-      <path d="M9 25C16 17 25 17 32 25C25 33 16 33 9 25ZM9 25L4 20V30L9 25ZM64 22C71 14 80 14 87 22C80 30 71 30 64 22ZM64 22L59 17V27L64 22Z" />
-      <circle cx="15" cy="24" r="1" />
-      <circle cx="70" cy="21" r="1" />
-      <path d="M31 37L37 51H60L66 37M35 37C38 32 43 31 48 35C53 31 59 32 62 37M31 37H66M36 51C42 55 55 55 61 51" />
-      <path d="M38 36C38 32 42 29 46 31C48 26 56 28 56 34V37M43 35L44 33M52 34L53 32" />
-      <path d="M42 39V48M49 39V48M56 39V48M20 43H27M23 40V46M74 42H84M79 38V47" />
-    </>
-  );
-}
-
-function BurningBushScene() {
-  return (
-    <>
-      <path d="M25 20V54M23 20L27 17M20 54H31" />
-      <circle cx="25" cy="23" r="4" />
-      <path d="M21 28C16 34 18 44 15 53H34C31 45 33 35 27 28M20 35L15 39M30 34L35 38" />
-      <path d="M66 53V39M66 44L57 36M66 45L75 35M62 42L55 42M70 41L78 42M66 38C62 34 63 30 66 27C69 31 71 34 66 38ZM57 36C52 33 53 29 56 27C60 30 61 33 57 36ZM75 35C73 31 76 28 80 28C80 32 79 35 75 35ZM60 52H73" />
-      <path d="M51 52C54 48 55 44 54 40M80 52C78 48 78 44 80 41M50 35L48 31M83 37L86 33M66 22V18" />
-      <path d="M40 53H89" />
-    </>
-  );
-}
-
-function SamaritanWellScene() {
-  return (
-    <>
-      <path d="M36 39H60L57 53H39L36 39ZM34 39H62M39 43H57" />
-      <path d="M48 39V20L55 15M48 22L40 16M48 22L56 26" />
-      <circle cx="48" cy="13" r="4" />
-      <path d="M43 18C39 23 40 30 38 37M53 18C57 23 57 29 60 37M40 25L34 31M56 25L62 30" />
-      <circle cx="24" cy="25" r="4" />
-      <path d="M20 30C16 36 18 44 15 53H33C31 45 32 36 27 30M19 37L14 41M29 37L35 40M26 34L35 30" />
-      <path d="M13 53H36M60 53H83M35 16C38 13 41 12 44 12" />
-    </>
   );
 }

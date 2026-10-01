@@ -90,8 +90,8 @@
     min-height: 100dvh;
     display: flex;
     flex-direction: column;
-    padding-top: 3.75rem;
-    padding-bottom: 3.75rem;
+    padding-top: 7.35rem;
+    padding-bottom: 5.25rem;
   }
 
   .site-ornament {
@@ -99,7 +99,7 @@
     z-index: 0;
     inset: 0;
     pointer-events: none;
-    color: hsl(var(--primary) / 0.74);
+    color: hsl(var(--primary) / 0.86);
   }
 
   .site-header,
@@ -116,107 +116,256 @@
   }
 
   .site-ornament__outer-line {
-    inset: 0.55rem;
+    inset: 0.62rem;
   }
 
   .site-ornament__inner-line {
-    inset: 0.8rem;
-    border-color: hsl(var(--primary) / 0.17);
+    inset: 1.02rem;
+    border-color: hsl(var(--primary) / 0.24);
+  }
+
+  .site-ornament__rail {
+    position: absolute;
+    left: 50%;
+    width: min(74%, 68rem);
+    height: 2.8rem;
+    overflow: visible;
+    stroke-width: 1.05;
+    opacity: 0.72;
+    transform: translateX(-50%);
+  }
+
+  .site-ornament__rail--top {
+    top: 1.05rem;
+  }
+
+  .site-ornament__rail--bottom {
+    bottom: 1.05rem;
+    transform: translateX(-50%) scaleY(-1);
   }
 
   .site-ornament__corner {
     position: absolute;
-    width: clamp(2.5rem, 4.5vw, 3.75rem);
+    width: clamp(3.6rem, 5.8vw, 5.1rem);
     height: auto;
-    stroke-width: 1.25;
+    stroke-width: 1.05;
   }
 
   .site-ornament__corner--top-left {
-    top: 0.55rem;
-    left: 0.55rem;
+    top: 0.62rem;
+    left: 0.62rem;
   }
 
   .site-ornament__corner--top-right {
-    top: 0.55rem;
-    right: 0.55rem;
+    top: 0.62rem;
+    right: 0.62rem;
     transform: scaleX(-1);
   }
 
   .site-ornament__corner--bottom-left {
-    bottom: 0.55rem;
-    left: 0.55rem;
+    bottom: 0.62rem;
+    left: 0.62rem;
     transform: scaleY(-1);
   }
 
   .site-ornament__corner--bottom-right {
-    right: 0.55rem;
-    bottom: 0.55rem;
+    right: 0.62rem;
+    bottom: 0.62rem;
     transform: scale(-1);
   }
 
   .site-ornament__vignette {
     position: absolute;
-    top: 0.35rem;
+    top: 0.55rem;
     left: 50%;
     display: grid;
-    width: 5.4rem;
-    height: 3.15rem;
+    width: clamp(10rem, 13vw, 12.5rem);
+    height: 6.7rem;
+    padding: 0.38rem;
     place-items: center;
     transform: translateX(-50%);
-    border: 1px solid hsl(var(--primary) / 0.56);
-    border-radius: 50% 50% 0.42rem 0.42rem / 48% 48% 0.42rem 0.42rem;
-    background: hsl(var(--background));
-    box-shadow: 0 0 0 0.25rem hsl(var(--background) / 0.92);
+    border: 1px solid hsl(var(--primary) / 0.72);
+    border-radius: 50% 50% 0.72rem 0.72rem / 34% 34% 0.72rem 0.72rem;
+    background:
+      radial-gradient(ellipse at 50% 42%, hsl(var(--primary) / 0.14), transparent 68%),
+      hsl(var(--background));
+    box-shadow:
+      0 0 0 0.26rem hsl(var(--background) / 0.94),
+      0 0 0 0.4rem hsl(var(--primary) / 0.22),
+      0 0.8rem 2rem hsl(0 0% 0% / 0.32);
+  }
+
+  .site-ornament__vignette::before {
+    position: absolute;
+    inset: 0.32rem;
+    border: 1px solid hsl(var(--primary) / 0.27);
+    border-radius: inherit;
+    content: '';
+    pointer-events: none;
+  }
+
+  .site-ornament__vignette-inner {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    place-items: center;
+    overflow: hidden;
+    border-radius: inherit;
   }
 
   .site-ornament__scene {
-    width: 88%;
-    height: 82%;
+    width: 96%;
+    height: 94%;
     overflow: visible;
-    stroke-width: 1.35;
+    stroke-width: 1.25;
+  }
+
+  .scene-star {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: scene-star-glow 3.8s ease-in-out infinite;
+  }
+
+  .scene-flame {
+    transform-box: fill-box;
+    transform-origin: center bottom;
+    animation: scene-flame-flicker 1.8s ease-in-out infinite alternate;
+  }
+
+  .scene-water {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: scene-water-ripple 3.2s ease-in-out infinite;
+  }
+
+  .scene-fish {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: scene-fish-glide 5.5s ease-in-out infinite;
+  }
+
+  @keyframes scene-star-glow {
+    0%,
+    100% {
+      opacity: 0.62;
+      transform: scale(0.96);
+    }
+
+    50% {
+      opacity: 1;
+      transform: scale(1.08);
+    }
+  }
+
+  @keyframes scene-flame-flicker {
+    from {
+      opacity: 0.68;
+      transform: scaleY(0.96) rotate(-1deg);
+    }
+
+    to {
+      opacity: 1;
+      transform: scaleY(1.06) rotate(1deg);
+    }
+  }
+
+  @keyframes scene-water-ripple {
+    0%,
+    100% {
+      opacity: 0.52;
+      transform: scaleX(0.96);
+    }
+
+    50% {
+      opacity: 0.88;
+      transform: scaleX(1.03);
+    }
+  }
+
+  @keyframes scene-fish-glide {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-1.5px);
+    }
   }
 
   @media (max-width: 760px) {
     .site-shell {
-      padding-top: 3.65rem;
+      padding-top: 6.05rem;
+      padding-bottom: 4.6rem;
     }
 
     .site-ornament__outer-line {
-      inset: 0.35rem;
+      inset: 0.38rem;
     }
 
     .site-ornament__inner-line {
-      inset: 0.58rem;
+      inset: 0.68rem;
+    }
+
+    .site-ornament__rail {
+      width: 82%;
+      height: 2rem;
+    }
+
+    .site-ornament__rail--top {
+      top: 0.68rem;
+    }
+
+    .site-ornament__rail--bottom {
+      bottom: 0.68rem;
     }
 
     .site-ornament__corner {
-      width: 2.6rem;
+      width: 3.15rem;
     }
 
     .site-ornament__corner--top-left {
-      top: 0.35rem;
-      left: 0.35rem;
+      top: 0.38rem;
+      left: 0.38rem;
     }
 
     .site-ornament__corner--top-right {
-      top: 0.35rem;
-      right: 0.35rem;
+      top: 0.38rem;
+      right: 0.38rem;
     }
 
     .site-ornament__corner--bottom-left {
-      bottom: 0.35rem;
-      left: 0.35rem;
+      bottom: 0.38rem;
+      left: 0.38rem;
     }
 
     .site-ornament__corner--bottom-right {
-      right: 0.35rem;
-      bottom: 0.35rem;
+      right: 0.38rem;
+      bottom: 0.38rem;
     }
 
     .site-ornament__vignette {
-      top: 0.22rem;
-      width: 4.9rem;
-      height: 2.9rem;
+      top: 0.32rem;
+      width: 8.3rem;
+      height: 5.25rem;
+      padding: 0.32rem;
+    }
+
+    .site-ornament__vignette::before {
+      inset: 0.26rem;
+    }
+
+    .site-ornament__scene {
+      stroke-width: 1.15;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .scene-star,
+    .scene-flame,
+    .scene-water,
+    .scene-fish {
+      animation: none;
     }
   }
 

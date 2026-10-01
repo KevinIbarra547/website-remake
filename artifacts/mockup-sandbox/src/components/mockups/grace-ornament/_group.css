@@ -1,0 +1,237 @@
+:root {
+  --background: 220 16% 8%;
+  --foreground: 42 38% 92%;
+  --border: 42 25% 26%;
+  --primary: 42 65% 70%;
+  --primary-foreground: 220 18% 10%;
+  --muted-foreground: 42 12% 70%;
+}
+
+.preview-page {
+  position: relative;
+  min-height: 700px;
+  overflow: hidden;
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: Georgia, serif;
+}
+
+.preview-current {
+  padding-top: 3.75rem;
+  padding-bottom: 3.75rem;
+}
+
+.preview-story {
+  padding-top: 7.35rem;
+  padding-bottom: 5.25rem;
+}
+
+.preview-header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: min(100% - 2rem, 78rem);
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.preview-brand {
+  color: hsl(var(--foreground));
+  font-size: 1.25rem;
+}
+
+.preview-nav {
+  display: flex;
+  gap: 1.4rem;
+  color: hsl(var(--muted-foreground));
+  font: 0.72rem ui-sans-serif, system-ui, sans-serif;
+}
+
+.preview-main {
+  position: relative;
+  z-index: 1;
+  width: min(100% - 2rem, 72rem);
+  margin: 2.5rem auto;
+}
+
+.preview-kicker {
+  color: hsl(var(--primary));
+  font: 0.65rem ui-monospace, monospace;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.preview-title {
+  max-width: 15ch;
+  margin: 0.8rem 0;
+  font-size: clamp(2.2rem, 4vw, 3.8rem);
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.preview-copy {
+  max-width: 32rem;
+  color: hsl(var(--muted-foreground));
+  font: 1rem/1.7 ui-sans-serif, system-ui, sans-serif;
+}
+
+.current-frame,
+.story-frame {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  color: hsl(var(--primary) / 0.82);
+  pointer-events: none;
+}
+
+.current-line {
+  position: absolute;
+  border: 1px solid hsl(var(--primary) / 0.4);
+}
+
+.current-line--outer {
+  inset: 0.55rem;
+}
+
+.current-line--inner {
+  inset: 0.8rem;
+  border-color: hsl(var(--primary) / 0.17);
+}
+
+.current-corner {
+  position: absolute;
+  width: 3.75rem;
+  stroke-width: 1.25;
+}
+
+.current-corner--top-left {
+  top: 0.55rem;
+  left: 0.55rem;
+}
+
+.current-corner--top-right {
+  top: 0.55rem;
+  right: 0.55rem;
+  transform: scaleX(-1);
+}
+
+.current-corner--bottom-left {
+  bottom: 0.55rem;
+  left: 0.55rem;
+  transform: scaleY(-1);
+}
+
+.current-corner--bottom-right {
+  right: 0.55rem;
+  bottom: 0.55rem;
+  transform: scale(-1);
+}
+
+.current-vignette {
+  position: absolute;
+  top: 0.35rem;
+  left: 50%;
+  display: grid;
+  width: 5.4rem;
+  height: 3.15rem;
+  place-items: center;
+  transform: translateX(-50%);
+  border: 1px solid hsl(var(--primary) / 0.56);
+  border-radius: 50% 50% 0.42rem 0.42rem / 48% 48% 0.42rem 0.42rem;
+  background: hsl(var(--background));
+  box-shadow: 0 0 0 0.25rem hsl(var(--background) / 0.92);
+}
+
+.story-line {
+  position: absolute;
+  border: 1px solid hsl(var(--primary) / 0.42);
+}
+
+.story-line--outer {
+  inset: 0.62rem;
+}
+
+.story-line--inner {
+  inset: 1.02rem;
+  border-color: hsl(var(--primary) / 0.24);
+}
+
+.story-corner {
+  position: absolute;
+  width: 4.6rem;
+  stroke-width: 1.05;
+}
+
+.story-corner--top-left {
+  top: 0.62rem;
+  left: 0.62rem;
+}
+
+.story-corner--top-right {
+  top: 0.62rem;
+  right: 0.62rem;
+  transform: scaleX(-1);
+}
+
+.story-rail {
+  position: absolute;
+  top: 1.05rem;
+  left: 50%;
+  width: min(74%, 68rem);
+  height: 2.8rem;
+  stroke-width: 1.05;
+  opacity: 0.72;
+  transform: translateX(-50%);
+}
+
+.story-rail--bottom {
+  top: auto;
+  bottom: 1.05rem;
+  transform: translateX(-50%) scaleY(-1);
+}
+
+.story-vignette {
+  position: absolute;
+  top: 0.55rem;
+  left: 50%;
+  display: grid;
+  width: 12rem;
+  height: 6.7rem;
+  padding: 0.38rem;
+  place-items: center;
+  transform: translateX(-50%);
+  border: 1px solid hsl(var(--primary) / 0.72);
+  border-radius: 50% 50% 0.72rem 0.72rem / 34% 34% 0.72rem 0.72rem;
+  background:
+    radial-gradient(ellipse at 50% 42%, hsl(var(--primary) / 0.14), transparent 68%),
+    hsl(var(--background));
+  box-shadow:
+    0 0 0 0.26rem hsl(var(--background) / 0.94),
+    0 0 0 0.4rem hsl(var(--primary) / 0.22),
+    0 0.8rem 2rem hsl(0 0% 0% / 0.32);
+}
+
+.story-vignette::before {
+  position: absolute;
+  inset: 0.32rem;
+  border: 1px solid hsl(var(--primary) / 0.27);
+  border-radius: inherit;
+  content: '';
+}
+
+.story-vignette-inner {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.story-scene {
+  width: 96%;
+  height: 94%;
+  stroke-width: 1.25;
+}
