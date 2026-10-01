@@ -1,6 +1,7 @@
 import { Link } from 'wouter';
 import { ArtworkFrame } from '@/components/artwork-frame';
 import { HomeBrandBanner } from '@/components/home-brand-banner';
+import { ScriptureStoryBanner } from '@/components/scripture-story-banner';
 
 const instagramUrl = 'https://www.instagram.com/grace_aligned/';
 
@@ -14,6 +15,11 @@ export default function Home() {
           <h1 className="display" id="home-heading">
             Spreading Gospel Truth Through Scripture &amp; Art
           </h1>
+          <ScriptureStoryBanner
+            title="The Road to Emmaus"
+            reference="Luke 24:13–35"
+            summary="The risen Jesus walked with two disciples and opened the Scriptures, turning sorrow into renewed hope."
+          />
           <p className="hero-copy" data-testid="text-home-introduction">
             Helping young adults find truth, purpose, and freedom through
             emotionally resonant Bible scripture paired with visual AI artwork.

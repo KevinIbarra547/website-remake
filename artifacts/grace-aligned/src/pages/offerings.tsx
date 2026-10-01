@@ -1,4 +1,5 @@
 import { ArtworkFrame } from '@/components/artwork-frame';
+import { ScriptureStoryBanner } from '@/components/scripture-story-banner';
 
 const instagramUrl = 'https://www.instagram.com/grace_aligned/';
 const amazonBiblesUrl =
@@ -14,6 +15,11 @@ export default function Offerings() {
         <h1 className="display" id="offerings-heading">
           Social Media Content, Videos &amp; Recommended Products
         </h1>
+        <ScriptureStoryBanner
+          title="The Parable of the Sower"
+          reference="Matthew 13:1–9, 18–23"
+          summary="Jesus pictured God’s word as seed scattered across different soils, a story about sharing Scripture widely."
+        />
         <p>
           Explore Grace Aligned&apos;s social media content, video channels, and
           affiliate recommended Bibles and products.

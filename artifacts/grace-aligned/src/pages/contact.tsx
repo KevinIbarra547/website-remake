@@ -1,4 +1,5 @@
 import { Link } from 'wouter';
+import { ScriptureStoryBanner } from '@/components/scripture-story-banner';
 
 const instagramUrl = 'https://www.instagram.com/grace_aligned/';
 
@@ -10,6 +11,11 @@ export default function Contact() {
         <h1 className="display" id="contact-heading">
           Contact Grace Aligned
         </h1>
+        <ScriptureStoryBanner
+          title="Moses Listens to Jethro’s Counsel"
+          reference="Exodus 18:13–24"
+          summary="Jethro urged Moses to share the work with trusted helpers instead of carrying the burden alone."
+        />
         <p>
           Have a question about our content, Bible recommendations, or faith
           journey? Send a message below or reach out directly on Instagram.
