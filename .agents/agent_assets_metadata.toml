@@ -1,0 +1,16 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "zO5XtypptbWk2TI5Rzhe7"
+uri = "file://attached_assets/generated_videos/grace-aligned-panel-highlights.gif"
+type = "image"
+title = "Grace Aligned panel highlights GIF"
+description = "Looping gold highlights move from one biblical scene panel to the next; the original engraving and central logo remain unchanged."
+logical_id = "bbc966b2-7748-408b-905e-57064837ece7"
+content_hash = "sha256:2fd909e7d42e50a69f3c62e2faf967b0baa27bdb5ca31ea6c1297b31dd914d32"
+size = 2871515
+mtime_ms = 1790814234176
+storage_uri = "gcs://replit-rams-assets-worf/rams/assets/repl:05771be5-480b-4bf3-bce2-2fcd0ca9720d/bbc966b2-7748-408b-905e-57064837ece7/339a955a-c1f8-4621-a9d1-2626387dd80b"
+storage_version_token = "1790814313393637"
+content_type = "image/gif"
