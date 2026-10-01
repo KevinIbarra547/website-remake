@@ -14,3 +14,17 @@ mtime_ms = 1790814234176
 storage_uri = "gcs://replit-rams-assets-worf/rams/assets/repl:05771be5-480b-4bf3-bce2-2fcd0ca9720d/bbc966b2-7748-408b-905e-57064837ece7/339a955a-c1f8-4621-a9d1-2626387dd80b"
 storage_version_token = "1790814313393637"
 content_type = "image/gif"
+
+[[outputs]]
+id = "R4l2gs1dF0VBLmv24WF-2"
+uri = "file://attached_assets/generated_videos/grace-aligned-scene-animations.gif"
+type = "image"
+title = "Grace Aligned scene-animations GIF"
+description = "An 8-second looping GIF with scene-specific effects: moving Ark water, rising Red Sea walls, Tower of Babel impact and debris, David's sling stone, Nativity rays, and subtle motion in other panels. The original engraved figures remain part of the flat artwork."
+logical_id = "9a37c52a-f950-492b-b668-02a323084d6c"
+content_hash = "sha256:7c621945e47b1a800b4cdc4a7783cb878a35cabeab11a7cec8aea7ea515503cf"
+size = 1641253
+mtime_ms = 1790814973775
+storage_uri = "gcs://replit-rams-assets-worf/rams/assets/repl:05771be5-480b-4bf3-bce2-2fcd0ca9720d/9a37c52a-f950-492b-b668-02a323084d6c/67566956-b0c8-4dfc-9fa4-e5850265765b"
+storage_version_token = "1790815067053317"
+content_type = "image/gif"

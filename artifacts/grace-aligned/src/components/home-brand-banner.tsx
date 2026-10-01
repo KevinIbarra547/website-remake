@@ -1,5 +1,5 @@
 import bannerPath from '@assets/image_1790812858324.png';
-import animatedBannerPath from '@assets/generated_videos/grace-aligned-panel-highlights.gif';
+import animatedBannerPath from '@assets/generated_videos/grace-aligned-scene-animations.gif';
 import logoPath from '@assets/0_Screenshot_2026-09-28_1.17.45_PM_1790729723658.png';
 
 export function HomeBrandBanner() {
