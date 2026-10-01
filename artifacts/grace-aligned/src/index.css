@@ -196,7 +196,7 @@
     object-fit: cover;
   }
 
-  .home-brand-banner__logo {
+  .home-brand-banner__logo-wrap {
     position: absolute;
     top: 70%;
     left: 50%;
@@ -205,10 +205,97 @@
     transform: translate(-50%, -50%);
     border: 1px solid hsl(var(--primary));
     border-radius: 50%;
-    object-fit: cover;
     box-shadow:
       0 0 0 0.4rem hsl(var(--background) / 0.88),
       0 0 1.5rem hsl(var(--primary) / 0.55);
+    animation: home-brand-logo-glow 8s ease-in-out infinite;
+  }
+
+  .home-brand-banner__logo-window {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    border-radius: inherit;
+  }
+
+  .home-brand-banner__logo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .home-brand-banner__logo-sheen {
+    position: absolute;
+    top: -15%;
+    left: -42%;
+    width: 38%;
+    height: 130%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(42 100% 88% / 0.18) 18%,
+      hsl(42 100% 88% / 0.88) 50%,
+      hsl(42 100% 88% / 0.18) 82%,
+      transparent
+    );
+    filter: blur(3px);
+    mix-blend-mode: screen;
+    opacity: 0;
+    pointer-events: none;
+    transform: rotate(20deg);
+    animation: home-brand-logo-sheen 8s ease-in-out infinite;
+  }
+
+  @keyframes home-brand-logo-sheen {
+    0%,
+    78%,
+    100% {
+      opacity: 0;
+      left: -42%;
+    }
+
+    81% {
+      opacity: 0.85;
+    }
+
+    92% {
+      left: 110%;
+      opacity: 0.72;
+    }
+
+    96% {
+      left: 110%;
+      opacity: 0;
+    }
+  }
+
+  @keyframes home-brand-logo-glow {
+    0%,
+    78%,
+    100% {
+      box-shadow:
+        0 0 0 0.4rem hsl(var(--background) / 0.88),
+        0 0 1.5rem hsl(var(--primary) / 0.55);
+    }
+
+    86% {
+      box-shadow:
+        0 0 0 0.4rem hsl(var(--background) / 0.88),
+        0 0 2.8rem hsl(var(--primary) / 0.88),
+        0 0 4rem hsl(var(--primary) / 0.4);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .home-brand-banner__logo-wrap,
+    .home-brand-banner__logo-sheen {
+      animation: none;
+    }
+
+    .home-brand-banner__logo-sheen {
+      display: none;
+    }
   }
 
   .hero h1 {

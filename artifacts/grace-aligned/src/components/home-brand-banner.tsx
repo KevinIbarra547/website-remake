@@ -19,7 +19,16 @@ export function HomeBrandBanner() {
           aria-hidden="true"
         />
       </picture>
-      <img className="home-brand-banner__logo" src={logoPath} alt="" aria-hidden="true" />
+      <div
+        className="home-brand-banner__logo-wrap"
+        aria-hidden="true"
+        data-testid="home-brand-banner-logo"
+      >
+        <div className="home-brand-banner__logo-window">
+          <img className="home-brand-banner__logo" src={logoPath} alt="" />
+          <span className="home-brand-banner__logo-sheen" />
+        </div>
+      </div>
     </div>
   );
 }
