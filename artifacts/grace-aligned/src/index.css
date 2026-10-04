@@ -88,11 +88,10 @@
     position: relative;
     isolation: isolate;
     --site-vine-width: clamp(2.25rem, calc((100vw - 88rem) / 2 - 0.25rem), 5rem);
-    --site-arch-offset: clamp(13rem, calc(11vw + 3rem), 16rem);
     min-height: 100dvh;
     display: flex;
     flex-direction: column;
-    padding-top: 1rem;
+    padding-top: 7.35rem;
     padding-bottom: 5.25rem;
   }
 
@@ -129,7 +128,7 @@
 
   .site-ornament__outer-arch {
     position: absolute;
-    top: var(--site-arch-offset);
+    top: -0.3rem;
     left: 50%;
     width: min(92%, 78rem);
     height: 7.2rem;
@@ -236,7 +235,7 @@
 
   .site-ornament__gothic-canopy {
     position: absolute;
-    top: calc(var(--site-arch-offset) - 0.65rem);
+    top: -0.65rem;
     left: 50%;
     width: clamp(17rem, 22vw, 21rem);
     height: 10rem;
@@ -248,7 +247,7 @@
 
   .site-ornament__finial {
     position: absolute;
-    top: calc(var(--site-arch-offset) - 1.45rem);
+    top: -1.45rem;
     left: 50%;
     width: 1.25rem;
     height: 2rem;
@@ -289,7 +288,7 @@
 
   .site-ornament__vignette {
     position: absolute;
-    top: calc(var(--site-arch-offset) + 0.55rem);
+    top: 0.55rem;
     left: 50%;
     display: grid;
     width: clamp(10rem, 13vw, 12.5rem);
@@ -342,13 +341,12 @@
 
   @media (max-width: 760px) {
     .site-shell {
-      --site-arch-offset: 9.5rem;
-      padding-top: 0.75rem;
+      padding-top: 6.05rem;
       padding-bottom: 4.6rem;
     }
 
     .site-ornament__outer-arch {
-      top: var(--site-arch-offset);
+      top: 0;
       width: 92%;
       height: 5.2rem;
       stroke-width: 0.78;
@@ -356,14 +354,14 @@
     }
 
     .site-ornament__gothic-canopy {
-      top: calc(var(--site-arch-offset) - 0.38rem);
+      top: -0.38rem;
       width: 10.7rem;
       height: 6.35rem;
       stroke-width: 0.9;
     }
 
     .site-ornament__finial {
-      top: calc(var(--site-arch-offset) - 1rem);
+      top: -1rem;
       width: 0.9rem;
       height: 1.45rem;
       stroke-width: 1.2;
@@ -415,7 +413,7 @@
     }
 
     .site-ornament__vignette {
-      top: calc(var(--site-arch-offset) + 0.32rem);
+      top: 0.32rem;
       width: 8.3rem;
       height: 5.25rem;
       padding: 0.32rem;
@@ -464,7 +462,7 @@
 
   .site-header {
     width: min(100% - 2rem, 78rem);
-    margin: 10rem auto 0;
+    margin: 0 auto;
     padding: 1rem 0;
     display: flex;
     align-items: center;
@@ -473,13 +471,15 @@
   }
 
   .site-gospel-banner {
-    width: min(100% - 2rem, 78rem);
-    margin: 0 auto;
-    padding: 0.5rem clamp(0.25rem, 0.8vw, 0.8rem);
+    width: min(100% - 2rem, 96rem);
+    margin: 1.25rem auto 2rem;
+    padding: clamp(0.8rem, 1.8vw, 1.5rem);
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
     gap: clamp(1rem, 3vw, 2.5rem);
+    border: 1px solid hsl(var(--border));
+    background: hsl(var(--card));
   }
 
   .site-gospel-banner__copy {
@@ -1135,6 +1135,13 @@
       );
     }
 
+    .site-gospel-banner {
+      width: min(
+        96rem,
+        calc(100% - var(--site-vine-width) - var(--site-vine-width) - 3rem)
+      );
+    }
+
     .home-brand-banner__logo-wrap {
       width: min(26%, 20rem);
     }
@@ -1277,13 +1284,9 @@
   }
 
   @media (max-width: 760px) {
-    .site-header {
-      margin-top: 6.9rem;
-    }
-
     .site-gospel-banner {
       gap: 0.7rem;
-      padding: 0.4rem 0.35rem;
+      padding: 0.7rem;
     }
 
     .site-gospel-banner__copy {

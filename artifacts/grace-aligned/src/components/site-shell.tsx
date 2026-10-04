@@ -16,8 +16,8 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
   return (
     <div className="site-shell">
       <SiteOrnament />
-      <SiteGospelBanner />
       <SiteHeader />
+      <SiteGospelBanner />
       <main className="site-main">{children}</main>
       <SiteFooter />
     </div>
