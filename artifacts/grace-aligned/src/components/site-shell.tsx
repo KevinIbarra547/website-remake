@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'wouter';
 import logoPath from '@assets/0_Screenshot_2026-09-28_1.17.45_PM_1790729723658.png';
-import gospelImagePath from '@assets/jesus-comforting.png';
+import gospelImagePath from '@/assets/jesus-comforting.png';
 import { SiteOrnament } from '@/components/site-ornament';
 
 const instagramUrl = 'https://www.instagram.com/grace_aligned/';

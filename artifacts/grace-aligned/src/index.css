@@ -88,7 +88,7 @@
     position: relative;
     isolation: isolate;
     --site-vine-width: clamp(2.25rem, calc((100vw - 88rem) / 2 - 0.25rem), 5rem);
-    --site-arch-offset: clamp(12rem, calc(10vw + 3rem), 15rem);
+    --site-arch-offset: clamp(13rem, calc(11vw + 3rem), 16rem);
     min-height: 100dvh;
     display: flex;
     flex-direction: column;
@@ -500,7 +500,7 @@
 
   .site-gospel-banner__image {
     display: block;
-    width: clamp(5.5rem, 7vw, 8rem);
+    width: clamp(6rem, 9vw, 10rem);
     aspect-ratio: 3 / 4;
     padding: 0.22rem;
     border: 1px solid hsl(var(--primary) / 0.72);
@@ -1069,25 +1069,8 @@
 
   @media (max-width: 760px) {
     .site-header {
-      margin-top: 6.9rem;
       align-items: flex-start;
       flex-direction: column;
-    }
-
-    .site-gospel-banner {
-      gap: 0.7rem;
-      padding: 0.4rem 0.35rem;
-    }
-
-    .site-gospel-banner__copy {
-      padding: 0.55rem 0.7rem 0.55rem 0.85rem;
-      font-size: clamp(0.95rem, 4vw, 1.1rem);
-      line-height: 1.25;
-    }
-
-    .site-gospel-banner__image {
-      width: 5rem;
-      padding: 0.18rem;
     }
 
     .site-nav {
@@ -1290,6 +1273,28 @@
 
     .form-note {
       font-size: 0.84rem;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .site-header {
+      margin-top: 6.9rem;
+    }
+
+    .site-gospel-banner {
+      gap: 0.7rem;
+      padding: 0.4rem 0.35rem;
+    }
+
+    .site-gospel-banner__copy {
+      padding: 0.55rem 0.7rem 0.55rem 0.85rem;
+      font-size: clamp(0.95rem, 4vw, 1.1rem);
+      line-height: 1.25;
+    }
+
+    .site-gospel-banner__image {
+      width: 5rem;
+      padding: 0.18rem;
     }
   }
 }
