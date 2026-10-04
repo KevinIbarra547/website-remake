@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'wouter';
 import logoPath from '@assets/0_Screenshot_2026-09-28_1.17.45_PM_1790729723658.png';
+import gospelImagePath from '@assets/jesus-comforting.png';
 import { SiteOrnament } from '@/components/site-ornament';
 
 const instagramUrl = 'https://www.instagram.com/grace_aligned/';
@@ -15,10 +16,28 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
   return (
     <div className="site-shell">
       <SiteOrnament />
+      <SiteGospelBanner />
       <SiteHeader />
       <main className="site-main">{children}</main>
       <SiteFooter />
     </div>
+  );
+}
+
+function SiteGospelBanner() {
+  return (
+    <aside className="site-gospel-banner" aria-label="A message of hope">
+      <p className="site-gospel-banner__copy">
+        <span>God has already paid the price.</span>
+        <span>He has forgiven you.</span>
+        <span>Jesus wants you to know His love.</span>
+      </p>
+      <img
+        src={gospelImagePath}
+        alt="Jesus comforting a grieving man"
+        className="site-gospel-banner__image"
+      />
+    </aside>
   );
 }
 
