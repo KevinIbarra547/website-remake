@@ -1,5 +1,5 @@
 import { Link } from 'wouter';
-import { ArtworkFrame } from '@/components/artwork-frame';
+import gospelImagePath from '@/assets/jesus-comforting.png';
 import { HomeBrandBanner } from '@/components/home-brand-banner';
 
 const instagramUrl = 'https://www.instagram.com/grace_aligned/';
@@ -8,16 +8,19 @@ export default function Home() {
   return (
     <>
       <HomeBrandBanner />
-      <section className="hero" aria-labelledby="home-heading">
+      <section className="hero hero--gospel" aria-labelledby="home-heading">
         <div>
-          <div className="eyebrow">Grace Aligned / Gospel truth</div>
           <h1 className="display" id="home-heading">
-            Spreading Gospel Truth Through Scripture &amp; Art
+            <span>
+              God has already <strong>paid the price.</strong>
+            </span>
+            <span>
+              He has <strong>forgiven you.</strong>
+            </span>
+            <span>
+              Jesus wants you to know <strong>His love.</strong>
+            </span>
           </h1>
-          <p className="hero-copy" data-testid="text-home-introduction">
-            Helping young adults find truth, purpose, and freedom through
-            emotionally resonant Bible scripture paired with visual AI artwork.
-          </p>
           <div className="hero-actions">
             <Link
               href="/offerings.html"
@@ -38,11 +41,18 @@ export default function Home() {
           </div>
         </div>
 
-        <ArtworkFrame
-          className="artwork-frame--hero"
-          caption="Find your peace in the Prince of Peace"
-          testId="frame-home-artwork"
-        />
+        <figure
+          className="artwork-frame artwork-frame--hero"
+          data-testid="frame-home-artwork"
+          aria-label="A message of hope"
+        >
+          <img
+            src={gospelImagePath}
+            alt="Jesus comforting a grieving man"
+            className="artwork-image"
+            data-testid="frame-home-artwork-image"
+          />
+        </figure>
       </section>
 
       <div className="gold-rule" />

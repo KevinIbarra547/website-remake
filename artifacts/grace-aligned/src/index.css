@@ -104,7 +104,6 @@
   }
 
   .site-header,
-  .site-gospel-banner,
   .site-main,
   .site-footer {
     position: relative;
@@ -470,68 +469,6 @@
     gap: 1.5rem;
   }
 
-  .site-gospel-banner {
-    width: min(100% - 2rem, 96rem);
-    margin: 1.25rem auto 2rem;
-    padding: clamp(0.8rem, 1.8vw, 1.5rem);
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    align-items: center;
-    gap: clamp(1rem, 3vw, 2.5rem);
-    border: 1px solid hsl(var(--primary) / 0.5);
-    background: linear-gradient(
-      125deg,
-      hsl(var(--card)),
-      hsl(var(--secondary) / 0.92)
-    );
-    box-shadow:
-      0 0 0 0.22rem hsl(var(--background) / 0.88),
-      0 0 0 0.3rem hsl(var(--primary) / 0.12),
-      0 1rem 2.2rem hsl(0 0% 0% / 0.24);
-  }
-
-  .site-gospel-banner__copy {
-    max-width: 48rem;
-    margin: 0;
-    padding: 0.9rem 1.2rem 0.9rem 1.35rem;
-    border-left: 4px solid hsl(var(--primary));
-    background: linear-gradient(
-      105deg,
-      hsl(var(--background) / 0.98),
-      hsl(var(--background) / 0.78)
-    );
-    color: hsl(var(--primary));
-    font-family: var(--app-font-serif);
-    font-size: clamp(1.3rem, 2.8vw, 2.4rem);
-    font-weight: 600;
-    line-height: 1.24;
-    text-shadow: 0 0 1rem hsl(var(--primary) / 0.16);
-  }
-
-  .site-gospel-banner__copy span {
-    display: block;
-  }
-
-  .site-gospel-banner__copy strong {
-    color: hsl(var(--primary));
-    font-weight: 700;
-  }
-
-  .site-gospel-banner__image {
-    display: block;
-    width: clamp(18rem, 24vw, 28rem);
-    aspect-ratio: 3 / 4;
-    padding: 0.22rem;
-    border: 1px solid hsl(var(--primary) / 0.72);
-    background: hsl(var(--background));
-    box-shadow:
-      0 0 0 0.24rem hsl(var(--background) / 0.94),
-      0 0 0 0.38rem hsl(var(--primary) / 0.2),
-      0 0.65rem 1.6rem hsl(0 0% 0% / 0.3);
-    object-fit: cover;
-    object-position: center 35%;
-  }
-
   .brand-link {
     display: inline-flex;
     align-items: center;
@@ -707,6 +644,15 @@
     margin: 1rem 0 1.2rem;
     font-size: clamp(2.4rem, 5.2vw, 4rem);
     line-height: 1.05;
+  }
+
+  .hero--gospel h1 span {
+    display: block;
+  }
+
+  .hero--gospel h1 strong {
+    color: hsl(var(--primary));
+    font-weight: 600;
   }
 
   .hero-copy {
@@ -1148,13 +1094,6 @@
 
   @media (min-width: 1280px) {
     .site-main {
-      width: min(
-        96rem,
-        calc(100% - var(--site-vine-width) - var(--site-vine-width) - 3rem)
-      );
-    }
-
-    .site-gospel-banner {
       width: min(
         96rem,
         calc(100% - var(--site-vine-width) - var(--site-vine-width) - 3rem)
