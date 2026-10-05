@@ -53,7 +53,7 @@ export default function About() {
             className="seal-image"
             data-testid="img-about-logo"
           />
-          <p>Living in truth is my MO</p>
+          <p>Live In Truth</p>
           <small>
             Grace Aligned is centered on loving Jesus, honoring the Trinity,
             and living in truth.
