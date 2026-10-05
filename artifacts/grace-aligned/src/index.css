@@ -646,11 +646,18 @@
     line-height: 1.05;
   }
 
-  .hero--gospel h1 span {
+  .hero--gospel .hero-message-copy {
+    max-width: 20ch;
+    margin: 1rem 0 1.2rem;
+    font-size: clamp(2.4rem, 5.2vw, 4rem);
+    line-height: 1.05;
+  }
+
+  .hero--gospel .hero-message-copy span {
     display: block;
   }
 
-  .hero--gospel h1 strong {
+  .hero--gospel .hero-message-copy strong {
     color: hsl(var(--primary));
     font-weight: 600;
   }
@@ -1104,7 +1111,8 @@
       width: min(26%, 20rem);
     }
 
-    .hero h1 {
+    .hero h1,
+    .hero--gospel .hero-message-copy {
       font-size: clamp(2.6rem, 5.2vw, 4.8rem);
     }
 

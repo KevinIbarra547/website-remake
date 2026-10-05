@@ -1,4 +1,5 @@
 import { Link } from 'wouter';
+import { ArtworkFrame } from '@/components/artwork-frame';
 import gospelImagePath from '@/assets/jesus-comforting.png';
 import { HomeBrandBanner } from '@/components/home-brand-banner';
 
@@ -7,10 +8,28 @@ const instagramUrl = 'https://www.instagram.com/grace_aligned/';
 export default function Home() {
   return (
     <>
-      <HomeBrandBanner />
-      <section className="hero hero--gospel" aria-labelledby="home-heading">
+      <section className="hero" aria-labelledby="home-heading">
         <div>
+          <div className="eyebrow">Grace Aligned / Gospel truth</div>
           <h1 className="display" id="home-heading">
+            Spreading Gospel Truth Through Scripture &amp; Art
+          </h1>
+          <p className="hero-copy" data-testid="text-home-introduction">
+            Helping young adults find truth, purpose, and freedom through
+            emotionally resonant Bible scripture paired with visual AI artwork.
+          </p>
+        </div>
+        <ArtworkFrame
+          className="artwork-frame--hero"
+          caption="Find your peace in the Prince of Peace"
+          testId="frame-home-artwork"
+        />
+      </section>
+
+      <HomeBrandBanner />
+      <section className="hero hero--gospel" aria-labelledby="home-message-copy">
+        <div>
+          <p className="display hero-message-copy" id="home-message-copy">
             <span>
               God has already <strong>paid the price.</strong>
             </span>
@@ -20,7 +39,7 @@ export default function Home() {
             <span>
               Jesus wants you to know <strong>His love.</strong>
             </span>
-          </h1>
+          </p>
           <div className="hero-actions">
             <Link
               href="/offerings.html"
@@ -43,14 +62,14 @@ export default function Home() {
 
         <figure
           className="artwork-frame artwork-frame--hero"
-          data-testid="frame-home-artwork"
+          data-testid="frame-home-gospel-artwork"
           aria-label="A message of hope"
         >
           <img
             src={gospelImagePath}
             alt="Jesus comforting a grieving man"
             className="artwork-image"
-            data-testid="frame-home-artwork-image"
+            data-testid="frame-home-gospel-artwork-image"
           />
         </figure>
       </section>
