@@ -441,7 +441,7 @@
   }
 
   .eyebrow {
-    color: hsl(var(--primary));
+    color: hsl(var(--foreground));
     font-family: var(--app-font-mono);
     font-size: 0.68rem;
     letter-spacing: 0.17em;
@@ -510,6 +510,11 @@
 
   .site-gospel-banner__copy span {
     display: block;
+  }
+
+  .site-gospel-banner__copy strong {
+    color: hsl(var(--primary));
+    font-weight: 700;
   }
 
   .site-gospel-banner__image {

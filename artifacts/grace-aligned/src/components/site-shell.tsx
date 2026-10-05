@@ -30,9 +30,15 @@ function SiteGospelBanner() {
   return (
     <aside className="site-gospel-banner" aria-label="A message of hope">
       <p className="site-gospel-banner__copy">
-        <span>God has already paid the price.</span>
-        <span>He has forgiven you.</span>
-        <span>Jesus wants you to know His love.</span>
+        <span>
+          God has already <strong>paid the price.</strong>
+        </span>
+        <span>
+          He has <strong>forgiven you.</strong>
+        </span>
+        <span>
+          Jesus wants you to know <strong>His love.</strong>
+        </span>
       </p>
       <img
         src={gospelImagePath}
