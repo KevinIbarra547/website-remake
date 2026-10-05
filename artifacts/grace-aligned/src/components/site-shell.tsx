@@ -13,11 +13,13 @@ const navigation = [
 ];
 
 export function SiteShell({ children }: { children: React.ReactNode }) {
+  const [location] = useLocation();
+
   return (
     <div className="site-shell">
       <SiteOrnament />
       <SiteHeader />
-      <SiteGospelBanner />
+      {location === '/' && <SiteGospelBanner />}
       <main className="site-main">{children}</main>
       <SiteFooter />
     </div>

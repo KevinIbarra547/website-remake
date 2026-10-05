@@ -514,7 +514,7 @@
 
   .site-gospel-banner__image {
     display: block;
-    width: clamp(8rem, 12vw, 13rem);
+    width: clamp(18rem, 24vw, 28rem);
     aspect-ratio: 3 / 4;
     padding: 0.22rem;
     border: 1px solid hsl(var(--primary) / 0.72);
@@ -1310,7 +1310,7 @@
     }
 
     .site-gospel-banner__image {
-      width: 6.25rem;
+      width: clamp(9rem, 44vw, 14rem);
       padding: 0.18rem;
     }
   }
