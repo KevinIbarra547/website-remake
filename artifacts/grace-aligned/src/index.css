@@ -1241,21 +1241,4 @@
     }
   }
 
-  @media (max-width: 760px) {
-    .site-gospel-banner {
-      gap: 0.7rem;
-      padding: 0.7rem;
-    }
-
-    .site-gospel-banner__copy {
-      padding: 0.7rem 0.7rem 0.7rem 0.9rem;
-      font-size: clamp(1.12rem, 5vw, 1.32rem);
-      line-height: 1.27;
-    }
-
-    .site-gospel-banner__image {
-      width: clamp(9rem, 44vw, 14rem);
-      padding: 0.18rem;
-    }
-  }
 }
