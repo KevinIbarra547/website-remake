@@ -2,6 +2,7 @@ import { Link } from 'wouter';
 import { ArtworkFrame } from '@/components/artwork-frame';
 import gospelImagePath from '@/assets/jesus-comforting.png';
 import { HomeBrandBanner } from '@/components/home-brand-banner';
+import { youtubeChannelUrl } from '@/lib/social-links';
 
 const instagramUrl = 'https://www.instagram.com/grace_aligned/';
 
@@ -34,6 +35,15 @@ export default function Home() {
               data-testid="link-home-instagram"
             >
               Follow on Instagram
+            </a>
+            <a
+              href={youtubeChannelUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="button secondary"
+              data-testid="link-home-intro-youtube"
+            >
+              Follow on YouTube
             </a>
           </div>
         </div>
@@ -121,9 +131,15 @@ export default function Home() {
           >
             Instagram: grace_aligned
           </a>
-          <span className="button secondary pending" data-testid="status-home-youtube">
-            YouTube: Grace Aligned [NEEDS DECISION: verified URL]
-          </span>
+          <a
+            href={youtubeChannelUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="button secondary"
+            data-testid="link-home-channel-youtube"
+          >
+            YouTube: Grace Aligned
+          </a>
         </div>
       </section>
     </>

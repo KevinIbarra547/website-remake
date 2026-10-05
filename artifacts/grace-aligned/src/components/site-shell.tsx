@@ -1,6 +1,7 @@
 import { Link, useLocation } from 'wouter';
 import logoPath from '@assets/0_Screenshot_2026-09-28_1.17.45_PM_1790729723658.png';
 import { SiteOrnament } from '@/components/site-ornament';
+import { youtubeChannelUrl } from '@/lib/social-links';
 
 const instagramUrl = 'https://www.instagram.com/grace_aligned/';
 
@@ -84,9 +85,14 @@ function SiteFooter() {
           >
             Instagram: grace_aligned
           </a>
-          <span className="pending" data-testid="status-footer-youtube">
-            YouTube: Grace Aligned [NEEDS DECISION: verified URL]
-          </span>
+          <a
+            href={youtubeChannelUrl}
+            target="_blank"
+            rel="noreferrer"
+            data-testid="link-footer-youtube"
+          >
+            YouTube: Grace Aligned
+          </a>
           <Link href="/contact.html" data-testid="link-footer-contact">
             Contact
           </Link>

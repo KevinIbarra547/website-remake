@@ -1,4 +1,5 @@
 import { ArtworkFrame } from '@/components/artwork-frame';
+import { youtubeChannelUrl } from '@/lib/social-links';
 
 const instagramUrl = 'https://www.instagram.com/grace_aligned/';
 const amazonBiblesUrl =
@@ -83,9 +84,15 @@ export default function Offerings() {
               contains affiliate links in descriptions.
             </span>
             <div className="hero-actions">
-              <span className="button secondary pending" data-testid="status-offering-youtube">
-                Subscribe on YouTube [NEEDS DECISION: verified URL]
-              </span>
+              <a
+                href={youtubeChannelUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="button secondary"
+                data-testid="link-offering-youtube"
+              >
+                Subscribe on YouTube
+              </a>
             </div>
           </div>
           <div className="offering-meta">Video Content<br />Free to watch</div>
