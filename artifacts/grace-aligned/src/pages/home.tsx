@@ -18,6 +18,24 @@ export default function Home() {
             Helping young adults find truth, purpose, and freedom through
             emotionally resonant Bible scripture paired with visual AI artwork.
           </p>
+          <div className="hero-actions">
+            <Link
+              href="/offerings.html"
+              className="button"
+              data-testid="link-home-recommended-bibles"
+            >
+              View Recommended Bibles
+            </Link>
+            <a
+              href={instagramUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="button secondary"
+              data-testid="link-home-instagram"
+            >
+              Follow on Instagram
+            </a>
+          </div>
         </div>
         <ArtworkFrame
           className="artwork-frame--hero"
@@ -40,24 +58,6 @@ export default function Home() {
               Jesus wants you to know <strong>His love.</strong>
             </span>
           </p>
-          <div className="hero-actions">
-            <Link
-              href="/offerings.html"
-              className="button"
-              data-testid="link-home-recommended-bibles"
-            >
-              View Recommended Bibles
-            </Link>
-            <a
-              href={instagramUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="button secondary"
-              data-testid="link-home-instagram"
-            >
-              Follow on Instagram
-            </a>
-          </div>
         </div>
 
         <figure
