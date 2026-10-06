@@ -827,22 +827,6 @@
     border-top: 1px solid hsl(var(--border));
   }
 
-  .offering-with-art {
-    grid-template-columns: 4rem minmax(0, 1fr) 10rem auto;
-  }
-
-  .artwork-frame--offering {
-    grid-column: 3;
-    width: 100%;
-    padding: 0.45rem;
-  }
-
-  .artwork-frame--offering .artwork-caption {
-    padding-top: 0.55rem;
-    font-family: var(--app-font-sans);
-    font-size: 0.68rem;
-  }
-
   .offering:last-child {
     border-bottom: 1px solid hsl(var(--border));
   }
@@ -1074,16 +1058,6 @@
       grid-template-columns: 2.2rem 1fr;
     }
 
-    .offering-with-art {
-      grid-template-columns: 2.2rem minmax(0, 1fr);
-    }
-
-    .artwork-frame--offering {
-      grid-column: 2;
-      width: min(100%, 12rem);
-      margin-top: 0.5rem;
-    }
-
     .offering-meta {
       grid-column: 2;
       min-width: 0;
@@ -1168,10 +1142,6 @@
     .offering {
       gap: 1.7rem;
       padding: 2rem 0;
-    }
-
-    .offering-with-art {
-      grid-template-columns: 4.5rem minmax(0, 1fr) 14rem 12rem;
     }
 
     .offering h2 {

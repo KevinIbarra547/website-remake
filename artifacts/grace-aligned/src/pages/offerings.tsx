@@ -1,4 +1,3 @@
-import { ArtworkFrame } from '@/components/artwork-frame';
 import { youtubeChannelUrl } from '@/lib/social-links';
 
 const instagramUrl = 'https://www.instagram.com/grace_aligned/';
@@ -35,7 +34,7 @@ export default function Offerings() {
 
       <section className="offering-list" aria-label="Grace Aligned offerings">
         <article
-          className="offering offering-with-art"
+          className="offering"
           data-testid="card-offering-instagram"
         >
           <div className="offering-number">01</div>
@@ -62,11 +61,6 @@ export default function Offerings() {
               </a>
             </div>
           </div>
-          <ArtworkFrame
-            className="artwork-frame--offering"
-            caption="Artwork sample; verse overlay not included."
-            testId="frame-offering-artwork"
-          />
           <div className="offering-meta">Social Media Content<br />Free to view</div>
         </article>
 
