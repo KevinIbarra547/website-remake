@@ -14,3 +14,17 @@ mtime_ms = 1790814234176
 storage_uri = "gcs://replit-rams-assets-worf/rams/assets/repl:05771be5-480b-4bf3-bce2-2fcd0ca9720d/bbc966b2-7748-408b-905e-57064837ece7/339a955a-c1f8-4621-a9d1-2626387dd80b"
 storage_version_token = "1790814313393637"
 content_type = "image/gif"
+
+[[outputs]]
+id = "UtHOtwSsihKnTB8gPaWvr"
+uri = "file://generated-artifacts/grace-aligned-logo-shine.gif"
+type = "image"
+title = "Grace Aligned Logo — Gold Shine GIF"
+description = "Looping 512×512 transparent GIF with a gold shine sweep, ready to download for Instagram or Gmail."
+logical_id = "983deff4-deae-472f-90f7-55798d34f747"
+content_hash = "sha256:33f5cf94240494f933facfde4ca806b377b6afbce475dbe3bcd4e84453c3e863"
+size = 1479685
+mtime_ms = 1792185162992
+storage_uri = "gcs://replit-rams-assets-worf/rams/assets/repl:05771be5-480b-4bf3-bce2-2fcd0ca9720d/983deff4-deae-472f-90f7-55798d34f747/55257f8e-9245-431e-ba89-f275312f7e44"
+storage_version_token = "1792185323331189"
+content_type = "image/gif"
