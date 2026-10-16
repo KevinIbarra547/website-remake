@@ -996,6 +996,48 @@
     gap: 1rem;
   }
 
+  .admin-alert-settings {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding: 1rem 1.2rem;
+    border: 1px solid hsl(var(--border));
+    background: hsl(var(--card));
+  }
+
+  .admin-alert-settings p {
+    margin: 0.35rem 0 0;
+    color: hsl(var(--muted-foreground));
+    font-size: 0.85rem;
+  }
+
+  .alert-permission {
+    color: hsl(var(--primary));
+    font-size: 0.85rem;
+  }
+
+  .new-message-alert {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding: 0.9rem 1.1rem;
+    border: 1px solid hsl(var(--primary));
+    background: hsl(var(--primary) / 0.1);
+    color: hsl(var(--foreground));
+  }
+
+  .alert-dismiss {
+    border: 0;
+    background: transparent;
+    color: hsl(var(--primary));
+    cursor: pointer;
+    font: inherit;
+  }
+
   .admin-state {
     margin: 1.5rem 0;
     color: hsl(var(--muted-foreground));
