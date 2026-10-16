@@ -96,6 +96,9 @@ function SiteFooter() {
           <Link href="/contact.html" data-testid="link-footer-contact">
             Contact
           </Link>
+          <Link href="/admin.html" data-testid="link-admin-inbox">
+            Admin Inbox
+          </Link>
         </div>
       </div>
     </footer>

@@ -10,6 +10,8 @@ servers:
 tags:
   - name: health
     description: Health operations
+  - name: leads
+    description: Contact message submissions
 paths:
   /healthz:
     get:
@@ -24,6 +26,45 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+  /leads:
+    get:
+      operationId: listLeads
+      tags: [leads]
+      summary: List contact messages
+      security:
+        - clerkSession: []
+      responses:
+        "200":
+          description: Contact messages, newest first
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Lead"
+        "401":
+          description: Sign-in required
+        "403":
+          description: Admin access required
+    post:
+      operationId: createLead
+      tags: [leads]
+      summary: Submit a contact message
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LeadInput"
+      responses:
+        "201":
+          description: Message saved
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Lead"
+        "400":
+          description: Invalid message
 components:
   schemas:
     HealthStatus:
@@ -33,4 +74,52 @@ components:
           type: string
       required:
         - status
+    Lead:
+      type: object
+      required: [id, name, email, message, source, status, createdAt, responseNote, respondedAt]
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        email:
+          type: string
+          format: email
+        message:
+          type: string
+        source:
+          type: string
+        status:
+          type: string
+          enum: [new, responded]
+        createdAt:
+          type: string
+          format: date-time
+        responseNote:
+          type: [string, "null"]
+        respondedAt:
+          type: [string, "null"]
+          format: date-time
+    LeadInput:
+      type: object
+      additionalProperties: false
+      required: [name, email, message]
+      properties:
+        name:
+          type: string
+          minLength: 1
+          maxLength: 160
+        email:
+          type: string
+          format: email
+          maxLength: 254
+        message:
+          type: string
+          minLength: 1
+          maxLength: 5000
+  securitySchemes:
+    clerkSession:
+      type: apiKey
+      in: cookie
+      name: __session
 

@@ -1,4 +1,6 @@
+@layer theme, base, clerk, components, utilities;
 @import 'tailwindcss';
+@import '@clerk/themes/shadcn.css';
 @import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
@@ -969,6 +971,58 @@
     color: hsl(var(--muted-foreground));
     font-size: 0.78rem;
     line-height: 1.6;
+  }
+
+  .form-error {
+    color: #fca5a5;
+  }
+
+  .auth-page {
+    min-height: 70vh;
+    display: grid;
+    place-items: center;
+    padding: 3rem 1rem;
+  }
+
+  .admin-inbox {
+    padding: 2rem 0 5rem;
+  }
+
+  .admin-heading,
+  .admin-message-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .admin-state {
+    margin: 1.5rem 0;
+    color: hsl(var(--muted-foreground));
+  }
+
+  .admin-message-list {
+    display: grid;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .admin-message {
+    padding: 1.4rem;
+    border: 1px solid hsl(var(--border));
+    background: hsl(var(--card));
+  }
+
+  .admin-message-meta time,
+  .admin-email {
+    color: hsl(var(--primary));
+    font-size: 0.82rem;
+  }
+
+  .admin-message p {
+    margin: 1rem 0 0;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
   }
 
   .site-footer {

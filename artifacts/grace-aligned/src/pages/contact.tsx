@@ -1,8 +1,35 @@
 import { Link } from 'wouter';
+import { useState } from 'react';
+import { useCreateLead } from '@workspace/api-client-react';
 
 const instagramUrl = 'https://www.instagram.com/grace_aligned/';
 
 export default function Contact() {
+  const [sent, setSent] = useState(false);
+  const createLead = useCreateLead();
+
+  function submitMessage(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setSent(false);
+    const form = event.currentTarget;
+    const values = new FormData(form);
+    createLead.mutate(
+      {
+        data: {
+          name: String(values.get('name') ?? ''),
+          email: String(values.get('email') ?? ''),
+          message: String(values.get('message') ?? ''),
+        },
+      },
+      {
+        onSuccess: () => {
+          form.reset();
+          setSent(true);
+        },
+      },
+    );
+  }
+
   return (
     <>
       <section className="page-intro" aria-labelledby="contact-heading">
@@ -19,7 +46,7 @@ export default function Contact() {
       <section className="contact-layout">
         <form
           className="contact-form"
-          onSubmit={(event) => event.preventDefault()}
+          onSubmit={submitMessage}
           data-testid="form-contact"
         >
           <div className="field">
@@ -34,13 +61,11 @@ export default function Contact() {
             <label htmlFor="contact-message">Message</label>
             <textarea id="contact-message" name="message" required data-testid="input-contact-message" />
           </div>
-          <button type="submit" className="button" disabled data-testid="button-send-message">
+          <button type="submit" className="button" disabled={createLead.isPending} data-testid="button-send-message">
             Send Message
           </button>
-          <p className="form-note" data-testid="text-contact-phase-note">
-            Contact submission is not active yet. Form behavior belongs to Phase
-            4.
-          </p>
+          {sent && <p className="form-note" role="status">Your message was sent. Thank you for reaching out.</p>}
+          {createLead.isError && <p className="form-note form-error" role="alert">Your message could not be sent. Please try again.</p>}
         </form>
 
         <aside className="side-note" data-testid="panel-contact-details">
