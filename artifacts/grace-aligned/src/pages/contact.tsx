@@ -48,13 +48,13 @@ export default function Contact() {
 
   return (
     <>
-      <section className="page-intro" aria-labelledby="contact-heading">
-        <Reveal className="eyebrow" y={10}>Start a conversation</Reveal>
-        <h1 className="display" id="contact-heading">
+      <section className="page-hero" aria-labelledby="contact-heading">
+        <Reveal className="kicker" y={10}>Start a conversation</Reveal>
+        <h1 className="display-xl" id="contact-heading">
           <WordRise text="Contact Grace Aligned" />
         </h1>
         <Reveal delay={0.4}>
-          <p>
+          <p className="lede">
             Have a question about our content, Bible recommendations, or faith
             journey? Send a message below, email directly, or reach out on
             Instagram.
@@ -62,54 +62,27 @@ export default function Contact() {
         </Reveal>
       </section>
 
-      <section className="contact-layout">
-        <Reveal>
-        <form
-          className="contact-form"
-          onSubmit={submitMessage}
-          data-testid="form-contact"
-        >
-          <div className="field">
-            <label htmlFor="contact-name">Name</label>
-            <input id="contact-name" name="name" type="text" required data-testid="input-contact-name" />
-          </div>
-          <div className="field">
-            <label htmlFor="contact-email">Email</label>
-            <input id="contact-email" name="email" type="email" required data-testid="input-contact-email" />
-          </div>
-          <div className="field">
-            <label htmlFor="contact-message">Message</label>
-            <textarea id="contact-message" name="message" required data-testid="input-contact-message" />
-          </div>
-          <button type="submit" className="button button--shine" disabled={createLead.isPending} data-testid="button-send-message">
-            <Send size={15} aria-hidden="true" /> Send Message
-          </button>
-          {sent && <p className="form-note" role="status">Your message was sent. Thank you for reaching out.</p>}
-          {createLead.isError && <p className="form-note form-error" role="alert">Your message could not be sent. Please try again.</p>}
-        </form>
-        </Reveal>
-
-        <div className="contact-side">
-        <Reveal as="aside" className="side-note email-card" delay={0.1} >
-          <div data-testid="panel-contact-email">
+      <section className="contact-grid">
+        <Reveal className="contact-channels">
+          <div className="channel channel--email" data-testid="panel-contact-email">
             <motion.span
-              className="email-card__icon"
+              className="icon-badge"
               animate={{ y: [0, -4, 0] }}
               transition={{ duration: 3.2, repeat: Infinity, ease: 'easeInOut' }}
               aria-hidden="true"
             >
               <Mail size={22} strokeWidth={1.4} />
             </motion.span>
-            <p>Email Directly</p>
-            <a href={mailtoUrl} className="email-card__address" data-testid="link-contact-email">
+            <h2 className="display-md">Email directly</h2>
+            <a href={mailtoUrl} className="channel__address text-link" data-testid="link-contact-email">
               {contactEmail}
             </a>
-            <div className="hero-actions">
+            <div className="btn-row">
               <a
                 href={gmailComposeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="button"
+                className="btn btn--gold"
                 data-testid="link-contact-gmail"
                 aria-label="Write an email in Gmail; opens in a new tab"
               >
@@ -117,7 +90,7 @@ export default function Contact() {
               </a>
               <button
                 type="button"
-                className="button secondary"
+                className="btn btn--ghost"
                 onClick={copyEmail}
                 data-testid="button-copy-email"
               >
@@ -126,29 +99,56 @@ export default function Contact() {
               </button>
             </div>
           </div>
+
+          <div className="channel" data-testid="panel-contact-details">
+            <span className="icon-badge" aria-hidden="true">
+              <Instagram size={22} strokeWidth={1.4} />
+            </span>
+            <h2 className="display-md">Instagram Direct Messages</h2>
+            <p>
+              Reach out directly on Instagram: <strong>grace_aligned</strong>.
+              Response expectation: As available. Service area: Global / Online.
+            </p>
+            <div className="btn-row">
+              <a
+                href={instagramUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="btn btn--ghost"
+                data-testid="link-contact-instagram"
+              >
+                <Instagram size={15} aria-hidden="true" /> Message on Instagram
+              </a>
+            </div>
+          </div>
         </Reveal>
 
-        <Reveal as="aside" className="side-note" delay={0.2}>
-          <div data-testid="panel-contact-details">
-          <p>Instagram Direct Messages</p>
-          <small>
-            Reach out directly on Instagram: <strong>grace_aligned</strong>.
-            Response expectation: As available. Service area: Global / Online.
-          </small>
-          <div className="hero-actions">
-            <a
-              href={instagramUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="button secondary"
-              data-testid="link-contact-instagram"
-            >
-              <Instagram size={15} aria-hidden="true" /> Message on Instagram
-            </a>
-          </div>
-          </div>
+        <Reveal delay={0.15}>
+          <form
+            className="contact-form"
+            onSubmit={submitMessage}
+            data-testid="form-contact"
+          >
+            <h2 className="display-md">Send a message</h2>
+            <div className="field">
+              <input id="contact-name" name="name" type="text" required placeholder=" " data-testid="input-contact-name" />
+              <label htmlFor="contact-name">Name</label>
+            </div>
+            <div className="field">
+              <input id="contact-email" name="email" type="email" required placeholder=" " data-testid="input-contact-email" />
+              <label htmlFor="contact-email">Email</label>
+            </div>
+            <div className="field">
+              <textarea id="contact-message" name="message" required placeholder=" " data-testid="input-contact-message" />
+              <label htmlFor="contact-message">Message</label>
+            </div>
+            <button type="submit" className="btn btn--gold btn--shine btn--block" disabled={createLead.isPending} data-testid="button-send-message">
+              <Send size={15} aria-hidden="true" /> {createLead.isPending ? 'Sending…' : 'Send Message'}
+            </button>
+            {sent && <p className="form-note" role="status">Your message was sent. Thank you for reaching out.</p>}
+            {createLead.isError && <p className="form-note form-error" role="alert">Your message could not be sent. Please try again.</p>}
+          </form>
         </Reveal>
-        </div>
       </section>
     </>
   );
