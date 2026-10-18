@@ -4,6 +4,7 @@ import { AnimatePresence } from 'framer-motion';
 import { Instagram, Mail, Menu, X, Youtube } from 'lucide-react';
 import logoPath from '@assets/0_Screenshot_2026-09-28_1.17.45_PM_1790729723658.png';
 import { motion, ScrollProgress } from '@/components/motion';
+import { SiteFrame } from '@/components/site-frame';
 import {
   contactEmail,
   instagramUrl,
@@ -29,6 +30,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
   return (
     <div className="site-shell">
       <ScrollProgress />
+      <SiteFrame />
       <SiteHeader />
       <motion.main
         key={location}
