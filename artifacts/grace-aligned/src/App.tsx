@@ -13,6 +13,7 @@ import About from '@/pages/about';
 import Contact from '@/pages/contact';
 import Home from '@/pages/home';
 import Offerings from '@/pages/offerings';
+import Shop from '@/pages/shop';
 import { Redirect } from 'wouter';
 import {
   Route,
@@ -114,6 +115,7 @@ function Router() {
       <SiteShell>
         <Switch>
           <Route path="/" component={Home} />
+          <Route path="/shop.html" component={Shop} />
           <Route path="/offerings.html" component={Offerings} />
           <Route path="/about.html" component={About} />
           <Route path="/contact.html" component={Contact} />

@@ -1,6 +1,11 @@
-import { youtubeChannelUrl } from '@/lib/social-links';
+import { Link } from 'wouter';
+import { ArrowRight, BookOpen, Instagram, PlayCircle } from 'lucide-react';
+import vineFoilPath from '@assets/image_1790886615294.png';
+import vinePanelPath from '@assets/image_1790886740045.png';
+import bannerPath from '@assets/image_1790885784515.png';
+import { Reveal, WordRise } from '@/components/motion';
+import { instagramUrl, youtubeChannelUrl } from '@/lib/social-links';
 
-const instagramUrl = 'https://www.instagram.com/grace_aligned/';
 const amazonBiblesUrl =
   'https://www.amazon.com/king-james-bible/s?k=king+james+bible';
 const bookmarkAccessoriesUrl =
@@ -9,37 +14,33 @@ const bookmarkAccessoriesUrl =
 export default function Offerings() {
   return (
     <>
-      <section className="page-intro" aria-labelledby="offerings-heading">
-        <div className="eyebrow">What Grace Aligned offers</div>
-        <h1 className="display" id="offerings-heading">
-          Social Media Content, Videos &amp; Recommended Products
+      <section className="page-hero" aria-labelledby="offerings-heading">
+        <Reveal className="kicker" y={10}>What Grace Aligned offers</Reveal>
+        <h1 className="display-xl" id="offerings-heading">
+          <WordRise text="Social Media Content, Videos & Recommended Products" />
         </h1>
-        <p>
-          Explore Grace Aligned&apos;s social media content, video channels, and
-          affiliate recommended Bibles and products.
-        </p>
-        <div className="hero-actions">
-          <a
-            href={amazonBiblesUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="button"
-            data-testid="link-offerings-shop-bibles"
-            aria-label="Shop recommended King James Bibles on Amazon; opens in a new tab"
-          >
-            Shop Recommended Bibles
-          </a>
-        </div>
+        <Reveal delay={0.5}>
+          <p className="lede">
+            Explore Grace Aligned&apos;s social media content, video channels,
+            and affiliate recommended Bibles and products.
+          </p>
+        </Reveal>
+        <Reveal className="btn-row" delay={0.7}>
+          <Link href="/shop.html" className="btn btn--gold btn--shine" data-testid="link-offerings-shop-bibles">
+            Shop Recommended Bibles <ArrowRight size={16} aria-hidden="true" />
+          </Link>
+        </Reveal>
       </section>
 
-      <section className="offering-list" aria-label="Grace Aligned offerings">
-        <article
-          className="offering"
-          data-testid="card-offering-instagram"
-        >
-          <div className="offering-number">01</div>
-          <div>
-            <h2>Instagram Verse Posts</h2>
+      <section className="offering-stack" aria-label="Grace Aligned offerings">
+        <Reveal as="article" className="offering-row" data-testid="card-offering-instagram">
+          <div className="offering-row__media">
+            <img src={vineFoilPath} alt="" />
+            <span className="offering-row__num">01</span>
+          </div>
+          <div className="offering-row__body">
+            <span className="kicker"><Instagram size={14} aria-hidden="true" /> Social Media Content · Free to view</span>
+            <h2 className="display-md">Instagram Verse Posts</h2>
             <p>
               Instagram posts featuring AI artwork and paintings paired with
               chosen scripture verses to evoke emotion and showcase biblical
@@ -49,25 +50,22 @@ export default function Offerings() {
               Active on Instagram (grace_aligned); serious tone with black and
               gold branding elements.
             </span>
-            <div className="hero-actions">
-              <a
-                href={instagramUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="button secondary"
-                data-testid="link-offering-instagram"
-              >
+            <div className="btn-row">
+              <a href={instagramUrl} target="_blank" rel="noreferrer" className="btn btn--ghost" data-testid="link-offering-instagram">
                 Follow on Instagram
               </a>
             </div>
           </div>
-          <div className="offering-meta">Social Media Content<br />Free to view</div>
-        </article>
+        </Reveal>
 
-        <article className="offering" data-testid="card-offering-videos">
-          <div className="offering-number">02</div>
-          <div>
-            <h2>YouTube &amp; Instagram Videos</h2>
+        <Reveal as="article" className="offering-row offering-row--flip" data-testid="card-offering-videos">
+          <div className="offering-row__media">
+            <img src={vinePanelPath} alt="" />
+            <span className="offering-row__num">02</span>
+          </div>
+          <div className="offering-row__body">
+            <span className="kicker"><PlayCircle size={14} aria-hidden="true" /> Video Content · Free to watch</span>
+            <h2 className="display-md">YouTube &amp; Instagram Videos</h2>
             <p>
               Planned videos will share scripture and explain the Gospel.
               Short and long-form video content expanding on scripture, gospel
@@ -77,64 +75,42 @@ export default function Offerings() {
               Planned expansion across YouTube (Grace Aligned) and Instagram;
               contains affiliate links in descriptions.
             </span>
-            <div className="hero-actions">
-              <a
-                href={youtubeChannelUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="button secondary"
-                data-testid="link-offering-youtube"
-              >
+            <div className="btn-row">
+              <a href={youtubeChannelUrl} target="_blank" rel="noreferrer" className="btn btn--ghost" data-testid="link-offering-youtube">
                 Subscribe on YouTube
               </a>
             </div>
           </div>
-          <div className="offering-meta">Video Content<br />Free to watch</div>
-        </article>
+        </Reveal>
 
-        <article
-          className="offering"
-          id="recommended-bibles"
-          data-testid="card-offering-products"
-        >
-          <div className="offering-number">03</div>
-          <div>
-            <h2>Affiliate Product Links</h2>
+        <Reveal as="article" className="offering-row" id="recommended-bibles" data-testid="card-offering-products">
+          <div className="offering-row__media">
+            <img src={bannerPath} alt="" />
+            <span className="offering-row__num">03</span>
+          </div>
+          <div className="offering-row__body">
+            <span className="kicker"><BookOpen size={14} aria-hidden="true" /> Vendor links · Prices set by vendor</span>
+            <h2 className="display-md">Affiliate Product Links</h2>
             <p>
               Recommended Bibles and products featured in posts and videos,
-            with vendor links provided below.
+              with vendor links provided below.
             </p>
             <span className="details">
-            Primary revenue stream through affiliate marketing. Affiliate
-            tracking is not confirmed for the supplied vendor URLs.
+              Primary revenue stream through affiliate marketing.
             </span>
-            <div className="hero-actions">
-            <a
-              href={amazonBiblesUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="button secondary"
-              data-testid="link-offering-bibles-amazon"
-              aria-label="Shop King James Bibles on Amazon; opens in a new tab"
-            >
-              Shop Recommended Bibles
-            </a>
-            <a
-              href={bookmarkAccessoriesUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="button secondary"
-              data-testid="link-offering-bookmarks"
-              aria-label="Browse Bible bookmarks at Christian Art Gifts; opens in a new tab"
-            >
-              Bible Bookmarks
-            </a>
+            <div className="btn-row">
+              <Link href="/shop.html" className="btn btn--gold" data-testid="link-offering-shop">
+                Browse all products
+              </Link>
+              <a href={amazonBiblesUrl} target="_blank" rel="sponsored noopener noreferrer" className="btn btn--ghost" data-testid="link-offering-bibles-amazon">
+                King James Bibles
+              </a>
+              <a href={bookmarkAccessoriesUrl} target="_blank" rel="sponsored noopener noreferrer" className="btn btn--ghost" data-testid="link-offering-bookmarks">
+                Bible Bookmarks
+              </a>
             </div>
           </div>
-          <div className="offering-meta">
-          Vendor links<br />Prices set by vendor
-          </div>
-        </article>
+        </Reveal>
       </section>
     </>
   );
