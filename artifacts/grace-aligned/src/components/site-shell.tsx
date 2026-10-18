@@ -1,9 +1,15 @@
+import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'wouter';
+import { Instagram, Mail, Youtube } from 'lucide-react';
 import logoPath from '@assets/0_Screenshot_2026-09-28_1.17.45_PM_1790729723658.png';
 import { SiteOrnament } from '@/components/site-ornament';
-import { youtubeChannelUrl } from '@/lib/social-links';
-
-const instagramUrl = 'https://www.instagram.com/grace_aligned/';
+import { motion, ScrollProgress } from '@/components/motion';
+import {
+  contactEmail,
+  instagramUrl,
+  mailtoUrl,
+  youtubeChannelUrl,
+} from '@/lib/social-links';
 
 const navigation = [
   { href: '/', label: 'Home', testId: 'link-nav-home' },
@@ -13,11 +19,26 @@ const navigation = [
 ];
 
 export function SiteShell({ children }: { children: React.ReactNode }) {
+  const [location] = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, [location]);
+
   return (
     <div className="site-shell">
+      <ScrollProgress />
       <SiteOrnament />
       <SiteHeader />
-      <main className="site-main">{children}</main>
+      <motion.main
+        key={location}
+        className="site-main"
+        initial={{ opacity: 0, y: 18 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+      >
+        {children}
+      </motion.main>
       <SiteFooter />
     </div>
   );
@@ -25,9 +46,17 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
 
 function SiteHeader() {
   const [location] = useLocation();
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   return (
-    <header className="site-header">
+    <header className="site-header" data-scrolled={scrolled || undefined}>
       <Link href="/" className="brand-link" data-testid="link-brand-home">
         <img
           src={logoPath}
@@ -48,6 +77,9 @@ function SiteHeader() {
             data-testid={item.testId}
           >
             {item.label}
+            {location === item.href && (
+              <motion.span layoutId="nav-underline" className="nav-underline" />
+            )}
           </Link>
         ))}
       </nav>
@@ -83,7 +115,7 @@ function SiteFooter() {
             rel="noreferrer"
             data-testid="link-footer-instagram"
           >
-            Instagram: grace_aligned
+            <Instagram size={14} aria-hidden="true" /> Instagram: grace_aligned
           </a>
           <a
             href={youtubeChannelUrl}
@@ -91,7 +123,10 @@ function SiteFooter() {
             rel="noreferrer"
             data-testid="link-footer-youtube"
           >
-            YouTube: Grace Aligned
+            <Youtube size={14} aria-hidden="true" /> YouTube: Grace Aligned
+          </a>
+          <a href={mailtoUrl} data-testid="link-footer-email">
+            <Mail size={14} aria-hidden="true" /> {contactEmail}
           </a>
           <Link href="/contact.html" data-testid="link-footer-contact">
             Contact

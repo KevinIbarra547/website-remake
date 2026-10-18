@@ -1,6 +1,6 @@
-import { youtubeChannelUrl } from '@/lib/social-links';
-
-const instagramUrl = 'https://www.instagram.com/grace_aligned/';
+import { BookOpen, Instagram, PlayCircle } from 'lucide-react';
+import { Reveal, WordRise } from '@/components/motion';
+import { instagramUrl, youtubeChannelUrl } from '@/lib/social-links';
 const amazonBiblesUrl =
   'https://www.amazon.com/king-james-bible/s?k=king+james+bible';
 const bookmarkAccessoriesUrl =
@@ -10,34 +10,39 @@ export default function Offerings() {
   return (
     <>
       <section className="page-intro" aria-labelledby="offerings-heading">
-        <div className="eyebrow">What Grace Aligned offers</div>
+        <Reveal className="eyebrow" y={10}>What Grace Aligned offers</Reveal>
         <h1 className="display" id="offerings-heading">
-          Social Media Content, Videos &amp; Recommended Products
+          <WordRise text="Social Media Content, Videos & Recommended Products" />
         </h1>
+        <Reveal delay={0.5}>
         <p>
           Explore Grace Aligned&apos;s social media content, video channels, and
           affiliate recommended Bibles and products.
         </p>
-        <div className="hero-actions">
+        </Reveal>
+        <Reveal className="hero-actions" delay={0.7}>
           <a
             href={amazonBiblesUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="button"
+            className="button button--shine"
             data-testid="link-offerings-shop-bibles"
             aria-label="Shop recommended King James Bibles on Amazon; opens in a new tab"
           >
             Shop Recommended Bibles
           </a>
-        </div>
+        </Reveal>
       </section>
 
       <section className="offering-list" aria-label="Grace Aligned offerings">
-        <article
+        <Reveal as="article"
           className="offering"
           data-testid="card-offering-instagram"
         >
-          <div className="offering-number">01</div>
+          <div className="offering-number">
+            <span className="offering-icon"><Instagram size={22} strokeWidth={1.4} aria-hidden="true" /></span>
+            01
+          </div>
           <div>
             <h2>Instagram Verse Posts</h2>
             <p>
@@ -62,10 +67,13 @@ export default function Offerings() {
             </div>
           </div>
           <div className="offering-meta">Social Media Content<br />Free to view</div>
-        </article>
+        </Reveal>
 
-        <article className="offering" data-testid="card-offering-videos">
-          <div className="offering-number">02</div>
+        <Reveal as="article" className="offering" data-testid="card-offering-videos">
+          <div className="offering-number">
+            <span className="offering-icon"><PlayCircle size={22} strokeWidth={1.4} aria-hidden="true" /></span>
+            02
+          </div>
           <div>
             <h2>YouTube &amp; Instagram Videos</h2>
             <p>
@@ -90,14 +98,17 @@ export default function Offerings() {
             </div>
           </div>
           <div className="offering-meta">Video Content<br />Free to watch</div>
-        </article>
+        </Reveal>
 
-        <article
+        <Reveal as="article"
           className="offering"
           id="recommended-bibles"
           data-testid="card-offering-products"
         >
-          <div className="offering-number">03</div>
+          <div className="offering-number">
+            <span className="offering-icon"><BookOpen size={22} strokeWidth={1.4} aria-hidden="true" /></span>
+            03
+          </div>
           <div>
             <h2>Affiliate Product Links</h2>
             <p>
@@ -134,7 +145,7 @@ export default function Offerings() {
           <div className="offering-meta">
           Vendor links<br />Prices set by vendor
           </div>
-        </article>
+        </Reveal>
       </section>
     </>
   );
